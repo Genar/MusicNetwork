@@ -23,6 +23,8 @@
 		EDAF8895232A2F500023AA8D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8894232A2F500023AA8D /* LoginPresenter.swift */; };
 		EDAF8898232A5C110023AA8D /* EAFacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8897232A5C110023AA8D /* EAFacebookManager.swift */; };
 		EDAF889B232AA1F20023AA8D /* EAGoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF889A232AA1F20023AA8D /* EAGoogleManager.swift */; };
+		EDB96141232ABA590055E502 /* EAKeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB96140232ABA590055E502 /* EAKeyChainService.swift */; };
+		EDB96146232ABAE90055E502 /* EAKeychainServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB96145232ABAE90055E502 /* EAKeychainServiceProtocol.swift */; };
 		EDC1BFD2232676E7004E4A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1BFD1232676E7004E4A94 /* AppDelegate.swift */; };
 		EDC1BFD4232676E7004E4A94 /* MusicItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1BFD3232676E7004E4A94 /* MusicItemsViewController.swift */; };
 		EDC1BFD7232676E7004E4A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC1BFD5232676E7004E4A94 /* Main.storyboard */; };
@@ -79,6 +81,8 @@
 		EDAF8894232A2F500023AA8D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		EDAF8897232A5C110023AA8D /* EAFacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAFacebookManager.swift; sourceTree = "<group>"; };
 		EDAF889A232AA1F20023AA8D /* EAGoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAGoogleManager.swift; sourceTree = "<group>"; };
+		EDB96140232ABA590055E502 /* EAKeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAKeyChainService.swift; sourceTree = "<group>"; };
+		EDB96145232ABAE90055E502 /* EAKeychainServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAKeychainServiceProtocol.swift; sourceTree = "<group>"; };
 		EDC1BFCE232676E7004E4A94 /* MusicNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC1BFD1232676E7004E4A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC1BFD3232676E7004E4A94 /* MusicItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemsViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +327,39 @@
 			path = Google;
 			sourceTree = "<group>";
 		};
+		EDB9613F232ABA130055E502 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EDB96143232ABAAF0055E502 /* KeyChainService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EDB96142232ABA9B0055E502 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				EDB96140232ABA590055E502 /* EAKeyChainService.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		EDB96143232ABAAF0055E502 /* KeyChainService */ = {
+			isa = PBXGroup;
+			children = (
+				EDB96144232ABAC30055E502 /* Protocol */,
+				EDB96142232ABA9B0055E502 /* Implementation */,
+			);
+			path = KeyChainService;
+			sourceTree = "<group>";
+		};
+		EDB96144232ABAC30055E502 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EDB96145232ABAE90055E502 /* EAKeychainServiceProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		EDC1BFC5232676E7004E4A94 = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +385,7 @@
 		EDC1BFD0232676E7004E4A94 /* MusicNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				EDB9613F232ABA130055E502 /* Services */,
 				EDA76CD02327BED100FC8307 /* Managers */,
 				EDC1C0172326B11F004E4A94 /* Modules */,
 				EDC1C00D2326A344004E4A94 /* Extensions */,
@@ -722,6 +760,8 @@
 				EDAF8898232A5C110023AA8D /* EAFacebookManager.swift in Sources */,
 				EDA76CC1232785B800FC8307 /* Date+CustomFormatter.swift in Sources */,
 				EDAF8891232A2D540023AA8D /* LoginProtocols.swift in Sources */,
+				EDB96141232ABA590055E502 /* EAKeyChainService.swift in Sources */,
+				EDB96146232ABAE90055E502 /* EAKeychainServiceProtocol.swift in Sources */,
 				EDA76CD72327C77E00FC8307 /* EAInstagramManager.swift in Sources */,
 				EDC1C0142326A700004E4A94 /* MusicItemsRouter.swift in Sources */,
 				EDC1C0192326B89E004E4A94 /* SearchResponse.swift in Sources */,
