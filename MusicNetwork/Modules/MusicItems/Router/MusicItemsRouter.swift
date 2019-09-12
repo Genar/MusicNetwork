@@ -27,7 +27,7 @@ class MusicItemsRouter: NSObject, MusicItemsRouterInput {
             let interactor = MusicItemsInteractor()
             let presenter = MusicItemsPresenter()
             let router = MusicItemsRouter()
-            let navigation = UINavigationController(rootViewController: musicItemsViewCtrl)
+            //let navigation = UINavigationController(rootViewController: musicItemsViewCtrl)
             
             musicItemsViewCtrl.presenter = presenter
             presenter.view = musicItemsViewCtrl

@@ -79,8 +79,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         let familyName = user.profile.familyName
         let email = user.profile.email
         // ...
+        print("\(String(describing: userId)) \(String(describing: idToken)) \(String(describing: fullName)) \(String(describing: givenName)) \(String(describing: familyName)) \(String(describing: email))")
         presenter?.onLoginSuccess()
-        
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
