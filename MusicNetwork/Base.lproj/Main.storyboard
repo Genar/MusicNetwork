@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz8-sF-hwD">
-                                <rect key="frame" x="40" y="128" width="60" height="60"/>
+                                <rect key="frame" x="40" y="168" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="gpi-vR-0E3"/>
                                     <constraint firstAttribute="width" constant="60" id="mdd-tC-tEL"/>
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bK2-KW-E08">
-                                <rect key="frame" x="314" y="128" width="60" height="60"/>
+                                <rect key="frame" x="314" y="168" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Z31-Jb-ptt"/>
                                     <constraint firstAttribute="width" constant="60" id="xOB-zb-X4H"/>
@@ -40,14 +40,22 @@
                                     <action selector="onGoogleLoginPressed:" destination="ICU-1F-s6p" eventType="touchUpInside" id="kv8-Fg-Chj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L14-ru-CZ7">
+                                <rect key="frame" x="20" y="122" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UnF-uG-LBs" firstAttribute="trailing" secondItem="bK2-KW-E08" secondAttribute="trailing" constant="40" id="Hfc-SW-D8C"/>
+                            <constraint firstItem="L14-ru-CZ7" firstAttribute="leading" secondItem="UnF-uG-LBs" secondAttribute="leading" constant="20" id="bmJ-Of-sFh"/>
                             <constraint firstItem="Hz8-sF-hwD" firstAttribute="leading" secondItem="UnF-uG-LBs" secondAttribute="leading" constant="40" id="dus-e1-VW9"/>
-                            <constraint firstItem="bK2-KW-E08" firstAttribute="top" secondItem="UnF-uG-LBs" secondAttribute="top" constant="40" id="eze-hM-PuK"/>
-                            <constraint firstItem="Hz8-sF-hwD" firstAttribute="top" secondItem="UnF-uG-LBs" secondAttribute="top" constant="40" id="mUn-rJ-61Z"/>
+                            <constraint firstItem="UnF-uG-LBs" firstAttribute="trailing" secondItem="L14-ru-CZ7" secondAttribute="trailing" constant="20" id="hp4-kN-0Em"/>
                             <constraint firstItem="bK2-KW-E08" firstAttribute="centerY" secondItem="Hz8-sF-hwD" secondAttribute="centerY" id="oBq-Iw-KN4"/>
+                            <constraint firstItem="L14-ru-CZ7" firstAttribute="top" secondItem="UnF-uG-LBs" secondAttribute="top" constant="34" id="qRV-VA-RDM"/>
+                            <constraint firstItem="Hz8-sF-hwD" firstAttribute="top" secondItem="L14-ru-CZ7" secondAttribute="bottom" constant="25" id="sbN-iv-GmT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UnF-uG-LBs"/>
                     </view>
@@ -212,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEb-PJ-KeD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDK-Rp-Jn2" userLabel="ContentView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="808"/>
@@ -336,7 +344,6 @@
                             <constraint firstItem="D2h-tY-fmH" firstAttribute="top" secondItem="NFX-qc-ohc" secondAttribute="bottom" constant="24" id="FKj-wG-myC"/>
                             <constraint firstItem="pEb-PJ-KeD" firstAttribute="leading" secondItem="hEJ-Fa-cDB" secondAttribute="leading" id="Qn5-ZL-7ts"/>
                             <constraint firstItem="fDK-Rp-Jn2" firstAttribute="leading" secondItem="pEb-PJ-KeD" secondAttribute="leading" id="ReJ-eH-DPW"/>
-                            <constraint firstItem="uCc-Ui-7tm" firstAttribute="bottom" secondItem="pEb-PJ-KeD" secondAttribute="bottom" constant="54" id="RjG-ZW-M73"/>
                             <constraint firstItem="NFX-qc-ohc" firstAttribute="leading" secondItem="SRW-g2-byA" secondAttribute="leading" id="YC8-ue-V9j"/>
                             <constraint firstItem="fDK-Rp-Jn2" firstAttribute="top" secondItem="uCc-Ui-7tm" secondAttribute="top" id="ZuG-pY-EBL"/>
                             <constraint firstItem="pEb-PJ-KeD" firstAttribute="leading" secondItem="uCc-Ui-7tm" secondAttribute="leading" id="h5g-pg-NHg"/>

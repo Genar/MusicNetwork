@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Return one or another depending on the url
             
             return EAGoogleManager.shared().applicationOpenUrl(open: url)
-            return EAFacebookManager.shared().applicationOpenUrl(app, open: url, options: options)
+            //return EAFacebookManager.shared().applicationOpenUrl(app, open: url, options: options)
     }
     
     
