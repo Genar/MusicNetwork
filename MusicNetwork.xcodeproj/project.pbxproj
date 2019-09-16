@@ -10,6 +10,10 @@
 		635D46562967C1015244EA1F /* Pods_MusicNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBFDE4CB62B470EEE465EF8 /* Pods_MusicNetwork.framework */; };
 		9BB8CDCABFBC4BA7BB00C230 /* Pods_MusicNetworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A138E3383B2177C277625919 /* Pods_MusicNetworkTests.framework */; };
 		E3FD05C708300959678D1625 /* Pods_MusicNetworkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171DDA5EE285BE4529E0E837 /* Pods_MusicNetworkUITests.framework */; };
+		ED3B61E3232FE4DD008DE713 /* SendMessage+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E2232FE4DD008DE713 /* SendMessage+String.swift */; };
+		ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */; };
+		ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */; };
+		ED3B61EC232FEDB8008DE713 /* EALineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61EB232FEDB8008DE713 /* EALineManager.swift */; };
 		EDA76CC1232785B800FC8307 /* Date+CustomFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */; };
 		EDA76CC3232794AF00FC8307 /* Decimal+StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */; };
 		EDA76CCC2327A9A400FC8307 /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CCB2327A9A400FC8307 /* MusicDetailViewController.swift */; };
@@ -68,6 +72,10 @@
 		A138E3383B2177C277625919 /* Pods_MusicNetworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicNetworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68073446A36B6B51DA0B5DC /* Pods-MusicNetworkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetworkUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicNetworkUITests/Pods-MusicNetworkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1FD501E9F983F6DAB6408F0 /* Pods-MusicNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetwork.debug.xcconfig"; path = "Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+		ED3B61E2232FE4DD008DE713 /* SendMessage+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SendMessage+String.swift"; sourceTree = "<group>"; };
+		ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAWhatsAppManager.swift; sourceTree = "<group>"; };
+		ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAMessageManager.swift; sourceTree = "<group>"; };
+		ED3B61EB232FEDB8008DE713 /* EALineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EALineManager.swift; sourceTree = "<group>"; };
 		EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CustomFormatter.swift"; sourceTree = "<group>"; };
 		EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+StringFormatter.swift"; sourceTree = "<group>"; };
 		EDA76CCB2327A9A400FC8307 /* MusicDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDetailViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +157,38 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED3B61E1232FE4BD008DE713 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B61E2232FE4DD008DE713 /* SendMessage+String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED3B61E4232FE89E008DE713 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B61EB232FEDB8008DE713 /* EALineManager.swift */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		ED3B61E5232FE8A7008DE713 /* WhatsApp */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */,
+			);
+			path = WhatsApp;
+			sourceTree = "<group>";
+		};
+		ED3B61E6232FE8BF008DE713 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		EDA76CC42327A75900FC8307 /* MusicDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +259,7 @@
 		EDA76CD02327BED100FC8307 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				ED3B61E1232FE4BD008DE713 /* Extensions */,
 				EDA76CD52327C72800FC8307 /* SocialNetwork */,
 				EDA76CD32327C70400FC8307 /* Image */,
 			);
@@ -244,6 +285,9 @@
 		EDA76CD52327C72800FC8307 /* SocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				ED3B61E6232FE8BF008DE713 /* Message */,
+				ED3B61E5232FE8A7008DE713 /* WhatsApp */,
+				ED3B61E4232FE89E008DE713 /* Line */,
 				EDAF8899232AA1D60023AA8D /* Google */,
 				EDAF8896232A5BA10023AA8D /* Facebook */,
 				EDA76CD42327C70F00FC8307 /* Instagram */,
@@ -753,14 +797,17 @@
 				EDA76CCC2327A9A400FC8307 /* MusicDetailViewController.swift in Sources */,
 				EDAF8895232A2F500023AA8D /* LoginPresenter.swift in Sources */,
 				EDA76CD22327BF2300FC8307 /* EAImageManager.swift in Sources */,
+				ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */,
 				EDC1BFD2232676E7004E4A94 /* AppDelegate.swift in Sources */,
 				EDC1C00923268EF5004E4A94 /* MusicItem.swift in Sources */,
 				EDAF888F232A2C1F0023AA8D /* LoginRouter.swift in Sources */,
+				ED3B61EC232FEDB8008DE713 /* EALineManager.swift in Sources */,
 				EDC1C00F2326A361004E4A94 /* Background+Queue.swift in Sources */,
 				EDAF8898232A5C110023AA8D /* EAFacebookManager.swift in Sources */,
 				EDA76CC1232785B800FC8307 /* Date+CustomFormatter.swift in Sources */,
 				EDAF8891232A2D540023AA8D /* LoginProtocols.swift in Sources */,
 				EDB96141232ABA590055E502 /* EAKeyChainService.swift in Sources */,
+				ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */,
 				EDB96146232ABAE90055E502 /* EAKeychainServiceProtocol.swift in Sources */,
 				EDA76CD72327C77E00FC8307 /* EAInstagramManager.swift in Sources */,
 				EDC1C0142326A700004E4A94 /* MusicItemsRouter.swift in Sources */,
@@ -769,6 +816,7 @@
 				EDAF8887232A2A2A0023AA8D /* LoginViewController.swift in Sources */,
 				EDA76CC3232794AF00FC8307 /* Decimal+StringFormatter.swift in Sources */,
 				EDC1C00723268503004E4A94 /* MusicItemTableViewCell.swift in Sources */,
+				ED3B61E3232FE4DD008DE713 /* SendMessage+String.swift in Sources */,
 				EDC1C0162326A8DE004E4A94 /* MusicItemsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

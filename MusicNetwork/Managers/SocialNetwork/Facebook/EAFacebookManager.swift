@@ -124,4 +124,15 @@ class EAFacebookManager {
         }
         return false
     }
+    
+    /// Send the message via Facebook Messenger
+    /// - Parameters:
+    ///     - message: A string or URL to be sent
+    /// - Returns: *true* if the message could be sent, *false* otherwhise
+    public func sendMessage(message: String) -> Bool {
+        
+        let messageString: String = String(format:"fb-messenger://share?link=%@", message)
+        return messageString.sendMessageWithUrlString()
+    }
+    
 }

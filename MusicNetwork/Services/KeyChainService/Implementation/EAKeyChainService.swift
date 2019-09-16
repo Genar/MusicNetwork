@@ -9,7 +9,8 @@
 import Foundation
 
 struct KeychainConfiguration {
-    static let serviceName = "LoginService"
+    
+    static let serviceName = "EALoginService"
     
     /*
      Specifying an access group to use with `KeychainPasswordItem` instances
@@ -20,7 +21,6 @@ struct KeychainConfiguration {
      and:
      https://developer.apple.com/library/ios/technotes/tn2311/_index.html
      */
-    //static let accessGroup = "$(AppIdentifierPrefix)es.zurich.zuricharchitecture.Application"
     
     /*
      Not specifying an access group to use with `KeychainPasswordItem` instances

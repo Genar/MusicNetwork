@@ -289,10 +289,62 @@
                                                     <action selector="onInstagramPressed:" destination="ymi-mV-gwK" eventType="touchUpInside" id="Ru6-mu-U5v"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-fk-10l">
+                                                <rect key="frame" x="84" y="5" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="MmU-Hc-0ri"/>
+                                                    <constraint firstAttribute="width" constant="50" id="sRt-eh-vsF"/>
+                                                </constraints>
+                                                <state key="normal" image="FacebookMessenger"/>
+                                                <connections>
+                                                    <action selector="onFacebookMessengerPressed:" destination="ymi-mV-gwK" eventType="touchUpInside" id="q7C-36-qwa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80K-Q5-Q7Y">
+                                                <rect key="frame" x="160" y="5" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="31Y-8x-8no"/>
+                                                    <constraint firstAttribute="height" constant="50" id="gVu-9B-0v4"/>
+                                                </constraints>
+                                                <state key="normal" image="Whatsapp"/>
+                                                <connections>
+                                                    <action selector="onWhatsAppPressed:" destination="ymi-mV-gwK" eventType="touchUpInside" id="tZ8-FP-44X"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmG-mH-xwu">
+                                                <rect key="frame" x="236" y="5" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="I9u-QC-dt4"/>
+                                                    <constraint firstAttribute="width" constant="50" id="L1w-A7-dgT"/>
+                                                </constraints>
+                                                <state key="normal" image="Message"/>
+                                                <connections>
+                                                    <action selector="onMessagePressed:" destination="ymi-mV-gwK" eventType="touchUpInside" id="ocb-6L-wrZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-ma-3nJ">
+                                                <rect key="frame" x="312" y="5" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="KbX-EL-qak"/>
+                                                    <constraint firstAttribute="width" constant="50" id="X7w-RL-VVa"/>
+                                                </constraints>
+                                                <state key="normal" image="Line"/>
+                                                <connections>
+                                                    <action selector="onLinePressed:" destination="ymi-mV-gwK" eventType="touchUpInside" id="fYc-8l-dsq"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Loy-fk-10l" firstAttribute="centerY" secondItem="9PF-fP-vn7" secondAttribute="centerY" id="2h1-Wj-Usc"/>
                                             <constraint firstItem="9PF-fP-vn7" firstAttribute="top" secondItem="Adf-y3-23I" secondAttribute="top" constant="5" id="7st-8s-NfZ"/>
+                                            <constraint firstItem="80K-Q5-Q7Y" firstAttribute="leading" secondItem="Loy-fk-10l" secondAttribute="trailing" constant="26" id="DaM-Wh-Xem"/>
+                                            <constraint firstItem="bmG-mH-xwu" firstAttribute="leading" secondItem="80K-Q5-Q7Y" secondAttribute="trailing" constant="26" id="jr8-pg-xjh"/>
+                                            <constraint firstItem="hPb-ma-3nJ" firstAttribute="centerY" secondItem="bmG-mH-xwu" secondAttribute="centerY" id="ln8-Pl-c6f"/>
+                                            <constraint firstItem="80K-Q5-Q7Y" firstAttribute="centerY" secondItem="Loy-fk-10l" secondAttribute="centerY" id="oqG-2H-gcK"/>
+                                            <constraint firstItem="hPb-ma-3nJ" firstAttribute="leading" secondItem="bmG-mH-xwu" secondAttribute="trailing" constant="26" id="pDX-3r-cMj"/>
+                                            <constraint firstItem="bmG-mH-xwu" firstAttribute="centerY" secondItem="80K-Q5-Q7Y" secondAttribute="centerY" id="pmb-5h-gEX"/>
+                                            <constraint firstItem="Loy-fk-10l" firstAttribute="leading" secondItem="9PF-fP-vn7" secondAttribute="trailing" constant="26" id="tvV-qv-Sa8"/>
                                             <constraint firstAttribute="height" constant="60" id="x4c-rw-brh"/>
                                         </constraints>
                                     </view>
@@ -395,8 +447,12 @@
     </scenes>
     <resources>
         <image name="Facebook" width="84" height="84"/>
+        <image name="FacebookMessenger" width="266.66665649414062" height="266.66665649414062"/>
         <image name="Google" width="84" height="84"/>
         <image name="Instagram" width="84" height="84"/>
+        <image name="Line" width="84.333335876464844" height="84.333335876464844"/>
+        <image name="Message" width="118" height="118"/>
         <image name="User" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Whatsapp" width="170.66667175292969" height="170.66667175292969"/>
     </resources>
 </document>

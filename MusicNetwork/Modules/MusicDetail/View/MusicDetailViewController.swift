@@ -59,6 +59,38 @@ class MusicDetailViewController: UIViewController {
         print("Is posted in Instagram? \(isPosted)")
     }
     
+    @IBAction func onFacebookMessengerPressed(_ sender: UIButton) {
+        
+        if let musicItem = musicItem {
+            let result = EAFacebookManager.shared().sendMessage(message: musicItem.trackViewUrl)
+            print("Facebook messenger: \(result)")
+        }
+    }
+    
+    @IBAction func onWhatsAppPressed(_ sender: UIButton) {
+        
+        if let musicItem = musicItem {
+            let result = EAWhatsAppManager.shared().sendMessage(message: musicItem.trackViewUrl)
+            print("WhatsApp: \(result)")
+        }
+    }
+    
+    @IBAction func onMessagePressed(_ sender: UIButton) {
+        
+        if let musicItem = musicItem {
+            let result = EAMessageManager.shared().sendMessage(message: musicItem.trackViewUrl)
+            print("Message: \(result)")
+        }
+    }
+    
+    @IBAction func onLinePressed(_ sender: UIButton) {
+        
+        if let musicItem = musicItem {
+            let result = EALineManager.shared().sendMessage(message: musicItem.trackViewUrl)
+            print("Line: \(result)")
+        }
+    }
+    
     
     // MARK: - Private
     
