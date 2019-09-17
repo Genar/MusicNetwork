@@ -8,6 +8,12 @@
 
 import Foundation
 
+///
+/// A singleton class to send messages or links
+/// via **WhatsApp**.
+/// Important: Add the entry *whatsapp*
+/// in the *LSApplicationQueriesSchemes* of the *Info.plist*
+///
 class EAWhatsAppManager {
     
     private static var sharedWhatsAppManager: EAWhatsAppManager = {
@@ -32,7 +38,7 @@ class EAWhatsAppManager {
     public func sendMessage(message: String) -> Bool {
         
         let messageString: String = String(format:"whatsapp://send?text=%@", message)
-        return messageString.sendMessageWithUrlString()
+        return messageString.openUrlString()
     }
     
 }

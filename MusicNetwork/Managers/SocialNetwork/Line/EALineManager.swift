@@ -8,6 +8,12 @@
 
 import Foundation
 
+///
+/// A singleton class to send messages or links
+/// via **Line**.
+/// Important: Add the entry *line*
+/// in the *LSApplicationQueriesSchemes* of the *Info.plist*
+///
 class EALineManager {
     
     private static var sharedLinepManager: EALineManager = {
@@ -32,7 +38,7 @@ class EALineManager {
     public func sendMessage(message: String) -> Bool {
         
         let messageString: String = String(format:"line://msg/text/%@", message)
-        return messageString.sendMessageWithUrlString()
+        return messageString.openUrlString()
     }
     
 }

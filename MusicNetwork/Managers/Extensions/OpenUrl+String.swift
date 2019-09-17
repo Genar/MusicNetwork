@@ -1,5 +1,5 @@
 //
-//  SendMessage+String.swift
+//  OpenUrl+String.swift
 //  MusicNetwork
 //
 //  Created by Genar Codina Reverter on 16/09/2019.
@@ -8,9 +8,16 @@
 
 import UIKit
 
+///
+/// A String extension to open URL's
+///
 extension String {
     
-    func sendMessageWithUrlString() -> Bool {
+    ///
+    /// Opens an URL string
+    /// - Returns: *true* if success, *false* otherwise
+    ///
+    func openUrlString() -> Bool {
         
         if let url: URL = URL(string: self) {
             if UIApplication.shared.canOpenURL(url) {

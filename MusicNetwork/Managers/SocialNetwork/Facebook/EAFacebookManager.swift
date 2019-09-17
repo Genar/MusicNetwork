@@ -9,6 +9,24 @@
 import FacebookLogin
 import FacebookCore
 
+///
+/// Singleton class to manage the login via Facebook
+/// and to send link messages via Facebook Messenger
+///
+///     1. Install the following cocoapods.
+///             pod 'FacebookCore', '~> 0.9.0'
+///             pod 'FacebookLogin', '~> 0.9.0'
+///             pod 'FacebookShare', '~> 0.9.0'
+///     2. Register your app in Facebook to add sign in functionality.
+///             https://developers.facebook.com/docs/facebook-login/ios/
+///     3. In LSApplicationQueriesSchemes of the Info.plist add.
+///             fbapi
+///             fb-messenger-share-api
+///             fbauth2
+///             fbshareextension
+///     4. In Target -> Info -> URL Types add a new entry
+///             In URL Schemes add a key provided by Facebook (i.e. fb377877239804630)
+///
 class EAFacebookManager {
     
     private let loginManager = LoginManager()
@@ -132,7 +150,7 @@ class EAFacebookManager {
     public func sendMessage(message: String) -> Bool {
         
         let messageString: String = String(format:"fb-messenger://share?link=%@", message)
-        return messageString.sendMessageWithUrlString()
+        return messageString.openUrlString()
     }
     
 }

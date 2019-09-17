@@ -10,7 +10,7 @@ import Foundation
 
 struct KeychainConfiguration {
     
-    static let serviceName = "EALoginService"
+    static let serviceName = "EAMKeyChainService"
     
     /*
      Specifying an access group to use with `KeychainPasswordItem` instances
@@ -29,9 +29,16 @@ struct KeychainConfiguration {
     static let accessGroup: String? = nil
 }
 
+///
+/// KeyChainService is a class whose main purpose
+/// is to store key/value pairs in the KeyChain
+/// and to get the corresponding value according to
+/// a given key
+///
 public class KeychainService: KeychainServiceProtocol {
     
     enum KeychainError: Error {
+        
         case itemNotFound
         case unexpectedItemData
         case unhandledError(status: OSStatus)
@@ -39,11 +46,21 @@ public class KeychainService: KeychainServiceProtocol {
     
     // MARK: Keychain access
     
+    ///
+    /// Build a query to find the item that matches the service,
+    /// account/key and access group.
+    ///
+    /// - Parameters:
+    ///     - key: The *key* whose value has to be found
+    /// - Returns:
+    ///     - The corresponding value for the given key
+    /// - Throws:
+    ///     - KeychainError.itemNotFound
+    ///     - KeychainError.unhandledError(status: status)
+    ///     - throw KeychainError.unexpectedItemData
+    ///
     public func getValue(key: String) throws -> String {
-        /*
-         Build a query to find the item that matches the service, account and
-         access group.
-         */
+        
         var query = KeychainService.keychainQuery(withService: KeychainConfiguration.serviceName, account: key, accessGroup: KeychainConfiguration.accessGroup)
         query[kSecMatchLimit as String] = kSecMatchLimitOne
         query[kSecReturnAttributes as String] = kCFBooleanTrue
@@ -70,8 +87,17 @@ public class KeychainService: KeychainServiceProtocol {
         return password
     }
     
+    ///
+    /// Stores a key/value pair that matches the service,
+    /// account/key and access group.
+    ///
+    /// - Parameters:
+    ///     - key: The *key* of the key/value pair
+    ///     - value: The *value* of the key/value pair
+    /// - Throws:
+    ///     - KeychainError.unhandledError(status: status)
     public func setValue(key: String, value: String) throws {
-        // Encode the password into an Data object.
+        // Encode the value (i.e. password) into an Data object.
         let encodedData = value.data(using: String.Encoding.utf8)
         
         do {
@@ -88,10 +114,10 @@ public class KeychainService: KeychainServiceProtocol {
             // Throw an error if an unexpected status was returned.
             guard status == noErr else { throw KeychainError.unhandledError(status: status) }
         } catch KeychainError.itemNotFound {
-            /*
-             No value was found in the keychain. Create a dictionary to save
-             as a new keychain item.
-             */
+            //
+            // No value was found in the keychain. Create a dictionary to save
+            // as a new keychain item.
+            //
             var newItem = KeychainService.keychainQuery(withService: KeychainConfiguration.serviceName, account: key, accessGroup: KeychainConfiguration.accessGroup)
             newItem[kSecValueData as String] = encodedData as AnyObject?
             
@@ -103,6 +129,13 @@ public class KeychainService: KeychainServiceProtocol {
         }
     }
     
+    ///
+    /// Deletes an item from the KeyChain
+    /// given by its key idenfier
+    /// - Parameters:
+    ///     - key: The *key* corresponding to the key/value pair to be deleted
+    /// - Throws:
+    ///     - KeychainError.unhandledError(status: status)
     public func deleteItem(key: String) throws {
         // Delete the existing item from the keychain.
         let query = KeychainService.keychainQuery(withService: KeychainConfiguration.serviceName, account: key, accessGroup: KeychainConfiguration.accessGroup)
@@ -112,6 +145,14 @@ public class KeychainService: KeychainServiceProtocol {
         guard status == noErr || status == errSecItemNotFound else { throw KeychainError.unhandledError(status: status) }
     }
     
+    ///
+    /// Get all the key/values pairs
+    ///
+    /// - Returns:
+    ///     - All key/values pairs in a [String: AnyObject] dictionary
+    /// - Throws:
+    ///     - throw KeychainError.unhandledError(status: status)
+    ///
     public func getAllValues() throws -> [String: AnyObject] {
         // Build a query for all items that match the service and access group.
         var query = KeychainService.keychainQuery(withService: KeychainConfiguration.serviceName, accessGroup: KeychainConfiguration.accessGroup)
@@ -148,7 +189,15 @@ public class KeychainService: KeychainServiceProtocol {
     
     // MARK: Convenience
     
+    ///
+    /// Builds a KeyChain query
+    /// - Parameters:
+    ///     - service: The *service* to be matched
+    ///     - account: The *account* (or key) to be matched
+    /// - Returns:
+    ///     - A key/value dictionary ([String: AnyObject]) that matches the query.
     private static func keychainQuery(withService service: String, account: String? = nil, accessGroup: String? = nil) -> [String: AnyObject] {
+        
         var query = [String: AnyObject]()
         query[kSecClass as String] = kSecClassGenericPassword
         query[kSecAttrService as String] = service as AnyObject?

@@ -8,6 +8,10 @@
 
 import Foundation
 
+///
+/// A singleton class to send a message/link via
+/// the **Message** app (included, by default, in every iOS mobile).
+///
 class EAMessageManager {
     
     private static var sharedMessageManager: EAMessageManager = {
@@ -27,12 +31,12 @@ class EAMessageManager {
     
     /// Send the message via WhatsApp
     /// - Parameters:
-    ///     - message: A string or URL to be sent
+    ///     - message: A message or URL to be sent
     /// - Returns: *true* if the message could be sent, *false* otherwhise
     public func sendMessage(message: String) -> Bool {
         
         let messageString: String = String(format:"sms:&body=%@", message)
-        return messageString.sendMessageWithUrlString()
+        return messageString.openUrlString()
     }
     
 }

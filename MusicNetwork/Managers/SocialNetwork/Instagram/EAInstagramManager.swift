@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+///
+/// Singleton class to post **Instagram stories**.
+/// Important: Add the entry *instagram-stories*
+/// in the *LSApplicationQueriesSchemes* of the *Info.plist*
+///
 class EAInstagramManager {
     
     private let instagramStoriesScheme: String = "instagram-stories://share"
@@ -37,6 +42,18 @@ class EAInstagramManager {
     }
     
     // MARK: - Public methods
+    
+    ///
+    /// Shares a story with the specified background image
+    /// and sticker image and the corresponding attribution URL
+    ///
+    /// - Parameters:
+    ///     - backgroundImageData: The *backgroundImageData* corresponding to the bakgroound image
+    ///     - stickerImageData: The *stickerImageData* corresponding to the sticker image
+    ///     - attributionURL: The *attributionURL* corresponding to a deep link
+    ///     - expirationIntervalInSeconds: The expiration interval in seconds.
+    ///         If it is 0.0 then there is no expiration time.
+    ///
     public func shareStory(backgroundImageData: Data?,
                            stickerImageData: Data?,
                            attributionURL: String?,
@@ -72,6 +89,18 @@ class EAInstagramManager {
         }
     }
     
+    ///
+    /// Shares a story with the specified background video,
+    /// whose maximum duration is 20 seconds,
+    /// and sticker image and the corresponding attribution URL.
+    ///
+    /// - Parameters:
+    ///     - backgroundVideoData: The *backgroundVideoData* corresponding to the bakgroound video
+    ///     - stickerImageData: The *stickerImageData* corresponding to the sticker image
+    ///     - attributionURL: The *attributionURL* corresponding to a deep link
+    ///     - expirationIntervalInSeconds: The expiration interval in seconds.
+    ///         If it is 0.0 then there is no expiration time.
+    ///
     public func shareStory(backgroundVideoData: Data?,
                            stickerImageData: Data?,
                            attributionURL: String?,
@@ -107,6 +136,21 @@ class EAInstagramManager {
         }
     }
     
+    ///
+    /// Shares a story with the specified top color and bottom color
+    /// as a background color (a gradient is built if the colors are different),
+    /// and sticker image and the corresponding attribution URL.
+    ///
+    /// - Parameters:
+    ///     - backgroundTopColor: The *backgroundTopColor* corresponding top color
+    ///         of the background color.
+    ///     - backgroundBottomColor: The *backgroundBottomColor* corresponding bottom color
+    ///         of the background color.
+    ///     - stickerImageData: The *stickerImageData* corresponding to the sticker image
+    ///     - attributionURL: The *attributionURL* corresponding to a deep link
+    ///     - expirationIntervalInSeconds: The expiration interval in seconds.
+    ///         If it is 0.0 then there is no expiration time.
+    ///
     public func shareStory(backgroundTopColor: String?,
                            backgroundBottomColor: String?,
                            stickerImageData: Data?,
@@ -144,4 +188,5 @@ class EAInstagramManager {
             return false
         }
     }
+    
 }
