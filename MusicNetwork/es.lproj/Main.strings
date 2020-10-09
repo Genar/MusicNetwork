@@ -1,0 +1,51 @@
+
+/* Class = "UISearchBar"; 3Rf-Pu-EqO.scopeButtonTitles[0] = "Title"; ObjectID = "3Rf-Pu-EqO"; */
+"3Rf-Pu-EqO.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; 3Rf-Pu-EqO.scopeButtonTitles[1] = "Title"; ObjectID = "3Rf-Pu-EqO"; */
+"3Rf-Pu-EqO.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UIButton"; normalTitle = "<< Previous"; ObjectID = "D2h-tY-fmH"; */
+"D2h-tY-fmH.normalTitle" = "<< Previous";
+
+/* Class = "UILabel"; text = "Artist"; ObjectID = "IA9-Yq-7Ey"; */
+"IA9-Yq-7Ey.text" = "Artist";
+
+/* Class = "UILabel"; text = "Song title"; ObjectID = "Jpp-CC-Oey"; */
+"Jpp-CC-Oey.text" = "Song title";
+
+/* Class = "UILabel"; text = "Log in with"; ObjectID = "L14-ru-CZ7"; */
+"L14-ru-CZ7.text" = "Log in with";
+
+/* Class = "UILabel"; text = "Song"; ObjectID = "M8b-FR-zUN"; */
+"M8b-FR-zUN.text" = "Song";
+
+/* Class = "UILabel"; text = "Genre"; ObjectID = "NFX-qc-ohc"; */
+"NFX-qc-ohc.text" = "Genre";
+
+/* Class = "UILabel"; text = "Genre"; ObjectID = "QvE-xD-4NR"; */
+"QvE-xD-4NR.text" = "Genre";
+
+/* Class = "UILabel"; text = "Album"; ObjectID = "Rbv-Hh-Gyu"; */
+"Rbv-Hh-Gyu.text" = "Album";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "SRW-g2-byA"; */
+"SRW-g2-byA.text" = "Date";
+
+/* Class = "UIButton"; normalTitle = "Next >>"; ObjectID = "Zh5-bq-8xg"; */
+"Zh5-bq-8xg.normalTitle" = "Next >>";
+
+/* Class = "UILabel"; text = "Album"; ObjectID = "d00-YE-S3M"; */
+"d00-YE-S3M.text" = "Album";
+
+/* Class = "UILabel"; text = "Artist"; ObjectID = "laW-0n-e4v"; */
+"laW-0n-e4v.text" = "Artist";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "qWX-gz-pBO"; */
+"qWX-gz-pBO.text" = "Price";
+
+/* Class = "UILabel"; text = "Duration"; ObjectID = "y1Z-yJ-H3B"; */
+"y1Z-yJ-H3B.text" = "Duration";
+
+/* Class = "UILabel"; text = "ReleaseDate"; ObjectID = "zb5-oj-Txc"; */
+"zb5-oj-Txc.text" = "ReleaseDate";

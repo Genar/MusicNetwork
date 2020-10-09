@@ -21,7 +21,7 @@ protocol MusicItemsPresenterInterface : class {
     var interactor: MusicItemsInteractorInput? {get set}
     var view: MusicItemsViewInterface? {get set}
     
-    func fetchMusicItems()
+    func fetchMusicItems(toSearch: String, limit: Int)
     func showDetails(for musicItems: MusicItem)
 }
 
@@ -29,7 +29,7 @@ protocol MusicItemsPresenterInterface : class {
 protocol MusicItemsInteractorInput : class {
     
     var output:MusicItemsInteractorOutput? {get set}
-    func fetchMusicItems()
+    func fetchMusicItems(toSearch: String, limit: Int)
 }
 
 // Protocol that defines the commands sent from the interactor to the presenter.

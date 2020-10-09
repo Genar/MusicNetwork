@@ -39,15 +39,21 @@ class MusicItemTableViewCell: UITableViewCell {
         releaseDateLabel.text = musicItem.releaseDate
         genreLabel.text = musicItem.primaryGenreName
         albumLabel.text = musicItem.collectionName
-        let durationInSeconds: Int = musicItem.trackTimeMillis / 1000
-        let minutes: Int = durationInSeconds / 60
-        let seconds: Int = durationInSeconds % 60
-        let currency: String = musicItem.currency
-        durationLabel.text = String(format: "%d' %d''",  minutes, seconds)
-        if let formattedAmount = musicItem.trackPrice.formattedAmount {
+        if let durationInMillis = musicItem.trackTimeMillis {
+            let durationInSeconds = durationInMillis / 1000
+            let minutes: Int = durationInSeconds / 60
+            let seconds: Int = durationInSeconds % 60
+            durationLabel.text = String(format: "%d' %d''",  minutes, seconds)
+        }
+        
+        if let trackPrice = musicItem.trackPrice,
+           let currency = musicItem.currency,
+           let formattedAmount = trackPrice.formattedAmount {
             priceLabel.text = String(format:"%@ %@", formattedAmount, currency)
         }
-        if let urlImage:URL = URL(string:musicItem.artworkUrl100) {
+        
+        if let artworkURL = musicItem.artworkUrl100,
+           let urlImage:URL = URL(string: artworkURL) {
             EAImageManager.shared().downloadImage(from: urlImage, imageView: self.artistImageView)
         }
     }

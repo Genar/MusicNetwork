@@ -21,7 +21,9 @@ class MusicDetailViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    var musicItems: [MusicItem]?
     var musicItem: MusicItem?
+    var indexPath: IndexPath?
 
     override func viewDidLoad() {
         
@@ -39,7 +41,8 @@ class MusicDetailViewController: UIViewController {
             let backgroundImgData = UIImage(named: "User")!.jpegData(compressionQuality: 1.0),
             let stickerImgData = artistImage.pngData(),
             let musicItem = self.musicItem {
-                let durationInSeconds: Int = musicItem.trackTimeMillis / 1000
+            if let trackTimeMillis = musicItem.trackTimeMillis {
+                let durationInSeconds: Int = trackTimeMillis / 1000
                 let durationInMinutes: Int = durationInSeconds / 60
                 if durationInMinutes <= 4 {
                     isPosted = EAInstagramManager.shared().shareStory(backgroundImageData: backgroundImgData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
@@ -47,13 +50,15 @@ class MusicDetailViewController: UIViewController {
                     isPosted = EAInstagramManager.shared().shareStory(backgroundTopColor: "#33FF33", backgroundBottomColor: "#FF00FF", stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
                 } else {
                     do {
-                        if  let videoURL = NSURL(string: musicItem.previewUrl) {
+                        if let previewURL = musicItem.previewUrl,
+                           let videoURL = NSURL(string: previewURL) {
                             let videoData = try Data(contentsOf: videoURL as URL)
                                 isPosted = EAInstagramManager.shared().shareStory(backgroundVideoData: videoData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
                         }
                     } catch {
                         print(error.localizedDescription)
                     }
+                }
             }
         }
         print("Is posted in Instagram? \(isPosted)")
@@ -61,33 +66,66 @@ class MusicDetailViewController: UIViewController {
     
     @IBAction func onFacebookMessengerPressed(_ sender: UIButton) {
         
-        if let musicItem = musicItem {
-            let result = EAFacebookManager.shared().sendMessage(message: musicItem.trackViewUrl)
+        if let musicItem = musicItem,
+           let trackViewURL = musicItem.trackViewUrl {
+            let result = EAFacebookManager.shared().sendMessage(message: trackViewURL)
             print("Facebook messenger: \(result)")
         }
     }
     
     @IBAction func onWhatsAppPressed(_ sender: UIButton) {
         
-        if let musicItem = musicItem {
-            let result = EAWhatsAppManager.shared().sendMessage(message: musicItem.trackViewUrl)
+        if let musicItem = musicItem,
+           let trackViewURL = musicItem.trackViewUrl {
+            let result = EAWhatsAppManager.shared().sendMessage(message: trackViewURL)
             print("WhatsApp: \(result)")
         }
     }
     
     @IBAction func onMessagePressed(_ sender: UIButton) {
         
-        if let musicItem = musicItem {
-            let result = EAMessageManager.shared().sendMessage(message: musicItem.trackViewUrl)
+        if let musicItem = musicItem,
+           let trackViewURL = musicItem.trackViewUrl {
+            let result = EAMessageManager.shared().sendMessage(message: trackViewURL)
             print("Message: \(result)")
         }
     }
     
     @IBAction func onLinePressed(_ sender: UIButton) {
         
-        if let musicItem = musicItem {
-            let result = EALineManager.shared().sendMessage(message: musicItem.trackViewUrl)
+        if let musicItem = musicItem,
+           let trackViewURL = musicItem.trackViewUrl {
+            let result = EALineManager.shared().sendMessage(message: trackViewURL)
             print("Line: \(result)")
+        }
+    }
+    
+    @IBAction func onPreviousPressed(_ sender: UIButton) {
+        
+        if let indexPath = self.indexPath {
+            if (indexPath.row > 0) {
+                self.indexPath = IndexPath(item: indexPath.row - 1, section: 0)
+                self.setupMedia()
+            } else if (indexPath.row == 0) {
+                if let numMusicItems = self.musicItems?.count {
+                    self.indexPath = IndexPath(item: numMusicItems - 1, section: 0)
+                    self.setupMedia()
+                }
+            }
+        }
+    }
+    
+    @IBAction func onNextPressed(_ sender: UIButton) {
+        
+        if let indexPath = self.indexPath,
+           let musicItems = self.musicItems {
+            if (indexPath.row < musicItems.count - 1) {
+                self.indexPath = IndexPath(row: indexPath.row + 1, section: 0)
+                self.setupMedia()
+            } else if (indexPath.row == musicItems.count - 1) {
+                self.indexPath = IndexPath(row: 0, section: 0)
+                self.setupMedia()
+            }
         }
     }
     
@@ -96,16 +134,20 @@ class MusicDetailViewController: UIViewController {
     
     private func setupMedia() {
         
+        guard let idxPath = self.indexPath else { return }
+        self.musicItem = self.musicItems?[idxPath.row]
         if let musicItem = self.musicItem {
             songLabel.text = musicItem.trackName
             artistLabel.text = musicItem.artistName
             albumLabel.text = musicItem.collectionName
             dateLabel.text = musicItem.releaseDate
             genreLabel.text = musicItem.primaryGenreName
-            if let urlImage:URL = URL(string:musicItem.artworkUrl100) {
+            if let artworkUrl100 = musicItem.artworkUrl100,
+               let urlImage:URL = URL(string: artworkUrl100) {
                 EAImageManager.shared().downloadImage(from: urlImage, imageView: self.artistImageView)
             }
-            if let urlPreview: URL = URL(string: musicItem.previewUrl) {
+            if let previewUrl = musicItem.previewUrl,
+               let urlPreview: URL = URL(string: previewUrl) {
                 let request: URLRequest = URLRequest(url: urlPreview)
                 artistWebView.load(request)
             }

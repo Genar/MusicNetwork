@@ -9,7 +9,7 @@
 import Foundation
 
 class MusicItemsPresenter: MusicItemsPresenterInterface {
-    
+
     // Reference to the view (weak to avoid retain cycle).
     weak var view: MusicItemsViewInterface?
     // Reference to the interactor interface.
@@ -19,9 +19,9 @@ class MusicItemsPresenter: MusicItemsPresenterInterface {
     // Array to hold music items feeds
     var musicItems = [MusicItem]()
     
-    func fetchMusicItems() {
+    func fetchMusicItems(toSearch: String, limit: Int) {
         
-        interactor?.fetchMusicItems()
+        interactor?.fetchMusicItems(toSearch: toSearch, limit: limit)
     }
     
     func showDetails(for musicItem:MusicItem) {
@@ -54,10 +54,12 @@ extension MusicItemsPresenter: MusicItemsInteractorOutput {
         var musicItemsFormatted = [MusicItem]()
         for item in musicItems {
             var itemFormatted = item
-            itemFormatted.releaseDate = Date.getFormattedDate(stringDate: item.releaseDate,
-                                                              stringFormatterOrigin: "yyyy-MM-dd'T'HH:mm:ssZ",
+            if let releaseDate = item.releaseDate {
+                itemFormatted.releaseDate = Date.getFormattedDate(stringDate: releaseDate,
+                                                                  stringFormatterOrigin: "yyyy-MM-dd'T'HH:mm:ssZ",
                                                               stringFormatterTarget: "MMM dd, yyyy")
-            musicItemsFormatted.append(itemFormatted)
+                musicItemsFormatted.append(itemFormatted)
+            }
         }
         
         return musicItemsFormatted

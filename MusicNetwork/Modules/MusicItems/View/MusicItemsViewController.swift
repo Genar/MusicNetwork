@@ -19,15 +19,10 @@ class MusicItemsViewController: UIViewController {
     var presenter:MusicItemsPresenterInterface?
     var selectedIndexPath: IndexPath = IndexPath(row: 0, section: 0)
     
-    static let kTrackTimeMillis: String = "trackTimeMillis"
-    static let kPrimaryGenreName: String = "primaryGenreName"
-    static let kTrackPrice: String = "trackPrice"
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        presenter?.fetchMusicItems()
-        self.searchBar.delegate = self
+        setupSearchBar()
     }
     
     // MARK: - Navigation
@@ -35,9 +30,10 @@ class MusicItemsViewController: UIViewController {
         
         if (segue.identifier == kDetailMusicSegue) {
             // pass data to next view
-            if let viewController:MusicDetailViewController = segue.destination as? MusicDetailViewController,
+            if let viewController: MusicDetailViewController = segue.destination as? MusicDetailViewController,
                let indexPath = musicItemsTableView.indexPathForSelectedRow {
-                    viewController.musicItem = musicItems[indexPath.row]
+                viewController.indexPath = indexPath
+                viewController.musicItems = musicItems
             }
         }
     }
@@ -46,16 +42,35 @@ class MusicItemsViewController: UIViewController {
         
         if (self.searchBar.selectedScopeButtonIndex == 0) {
             self.musicItems.sort { (first, second) -> Bool in
-                return first.trackTimeMillis < second.trackTimeMillis
+                if let firstTrackTimeMillis = first.trackTimeMillis,
+                   let secondTrackTimeMillis = second.trackTimeMillis {
+                    return firstTrackTimeMillis < secondTrackTimeMillis
+                } else {
+                    return false
+                }
             }
         } else if (self.searchBar.selectedScopeButtonIndex == 1) {
             self.musicItems.sort { (first, second) -> Bool in
-                return first.primaryGenreName < second.primaryGenreName
+                if let firstGenreName = first.primaryGenreName,
+                   let secondGenreName = second.primaryGenreName {
+                    return firstGenreName < secondGenreName
+                } else {
+                    return false
+                }
             }
-        } else if (self.searchBar.selectedScopeButtonIndex == 2) {
-//            NSSortDescriptor *valueDescriptor = [NSSortDescriptor sortDescriptorWithKey:kTrackPrice ascending:YES];
-//            musicItems = [musicItems sortedArrayUsingDescriptors:@[valueDescriptor]];
         }
+    }
+    
+    private func setupSearchBar() {
+        
+        let durationText: String = "music_items_duration_title".localized()
+        let genreText: String = "music_items_genre_title".localized()
+        let searchPlaceholderText = "music_items_search_placeholder".localized()
+        
+        self.searchBar.scopeButtonTitles = [durationText, genreText]
+        self.searchBar.placeholder = searchPlaceholderText
+        
+        self.searchBar.delegate = self
     }
 }
 
@@ -97,6 +112,7 @@ extension MusicItemsViewController: MusicItemsViewInterface {
     func showMusicItems(for musicItems: [MusicItem]) {
         
         self.musicItems = musicItems
+        self.sortItems()
         musicItemsTableView.reloadData()
     }
 }
@@ -119,13 +135,10 @@ extension MusicItemsViewController: UISearchBarDelegate {
             let isTextAllWhiteSpaces: Bool = inputText.trimmingCharacters(in: CharacterSet.whitespaces).count == 0
             
                 if ( !isTextEmpty || !isTextAllWhiteSpaces) {
-                    //NSError *error = nil;
-                    //NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"  +" options:NSRegularExpressionCaseInsensitive error:&error];
-            
-                    //NSString* trimmedString = [regex stringByReplacingMatchesInString:inputText options:0 range:NSMakeRange(0, [inputText length]) withTemplate:@" "];
-                    //NSString* stringWithPlus = [trimmedString stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+                    inputText = inputText.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
                     self.view.endEditing(true)
-                    //ConnectionManager.sharedInstance.searchWithString:stringWithPlus withLimit:kNumberOfSongs
+                    
+                    presenter?.fetchMusicItems(toSearch: inputText, limit: 200)
                 }
         }
     }

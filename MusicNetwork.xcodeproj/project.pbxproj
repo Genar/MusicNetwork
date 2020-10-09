@@ -14,6 +14,10 @@
 		ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */; };
 		ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */; };
 		ED3B61EC232FEDB8008DE713 /* EALineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61EB232FEDB8008DE713 /* EALineManager.swift */; };
+		ED5AE5DD252E358500B9F61B /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5AE5DC252E358500B9F61B /* String+Localizable.swift */; };
+		ED5AE5DE252E358500B9F61B /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5AE5DC252E358500B9F61B /* String+Localizable.swift */; };
+		ED5AE5FF252E381500B9F61B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED5AE602252E381500B9F61B /* Localizable.strings */; };
+		ED5AE600252E381500B9F61B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED5AE602252E381500B9F61B /* Localizable.strings */; };
 		EDA76CC1232785B800FC8307 /* Date+CustomFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */; };
 		EDA76CC3232794AF00FC8307 /* Decimal+StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */; };
 		EDA76CCC2327A9A400FC8307 /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CCB2327A9A400FC8307 /* MusicDetailViewController.swift */; };
@@ -76,6 +80,11 @@
 		ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAWhatsAppManager.swift; sourceTree = "<group>"; };
 		ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAMessageManager.swift; sourceTree = "<group>"; };
 		ED3B61EB232FEDB8008DE713 /* EALineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EALineManager.swift; sourceTree = "<group>"; };
+		ED5AE5DC252E358500B9F61B /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
+		ED5AE5F4252E374500B9F61B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		ED5AE5F5252E374500B9F61B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ED5AE601252E381500B9F61B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED5AE603252E381900B9F61B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CustomFormatter.swift"; sourceTree = "<group>"; };
 		EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+StringFormatter.swift"; sourceTree = "<group>"; };
 		EDA76CCB2327A9A400FC8307 /* MusicDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDetailViewController.swift; sourceTree = "<group>"; };
@@ -407,6 +416,7 @@
 		EDC1BFC5232676E7004E4A94 = {
 			isa = PBXGroup;
 			children = (
+				ED5AE602252E381500B9F61B /* Localizable.strings */,
 				EDC1BFD0232676E7004E4A94 /* MusicNetwork */,
 				EDC1BFE5232676E9004E4A94 /* MusicNetworkTests */,
 				EDC1BFF0232676E9004E4A94 /* MusicNetworkUITests */,
@@ -529,6 +539,7 @@
 				EDC1C00E2326A361004E4A94 /* Background+Queue.swift */,
 				EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */,
 				EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */,
+				ED5AE5DC252E358500B9F61B /* String+Localizable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -642,6 +653,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = EDC1BFC5232676E7004E4A94;
 			productRefGroup = EDC1BFCF232676E7004E4A94 /* Products */;
@@ -661,6 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC1BFDC232676E9004E4A94 /* LaunchScreen.storyboard in Resources */,
+				ED5AE5FF252E381500B9F61B /* Localizable.strings in Resources */,
 				EDC1BFD9232676E9004E4A94 /* Assets.xcassets in Resources */,
 				EDC1BFD7232676E7004E4A94 /* Main.storyboard in Resources */,
 			);
@@ -670,6 +683,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5AE600252E381500B9F61B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +832,7 @@
 				EDC1C00723268503004E4A94 /* MusicItemTableViewCell.swift in Sources */,
 				ED3B61E3232FE4DD008DE713 /* OpenUrl+String.swift in Sources */,
 				EDC1C0162326A8DE004E4A94 /* MusicItemsPresenter.swift in Sources */,
+				ED5AE5DD252E358500B9F61B /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC1BFE7232676E9004E4A94 /* MusicNetworkTests.swift in Sources */,
+				ED5AE5DE252E358500B9F61B /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,10 +869,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		ED5AE602252E381500B9F61B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED5AE601252E381500B9F61B /* en */,
+				ED5AE603252E381900B9F61B /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EDC1BFD5232676E7004E4A94 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EDC1BFD6232676E7004E4A94 /* Base */,
+				ED5AE5F4252E374500B9F61B /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -865,6 +891,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EDC1BFDB232676E9004E4A94 /* Base */,
+				ED5AE5F5252E374500B9F61B /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -876,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -939,6 +967,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

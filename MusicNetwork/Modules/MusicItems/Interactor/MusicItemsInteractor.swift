@@ -25,9 +25,9 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
         basePathSearchURL = basePathURL + "search?term=%@&limit=%ld"
     }
     
-    func fetchMusicItems() {
+    func fetchMusicItems(toSearch: String, limit: Int) {
 
-        let fullUrlString: String = String(format: self.basePathSearchURL, "Michael Jackson", 200)
+        let fullUrlString: String = String(format: self.basePathSearchURL, toSearch, limit)
         guard let urlEncodedString:String = fullUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         print(fullUrlString)
         guard let url = URL(string: urlEncodedString) else { return }

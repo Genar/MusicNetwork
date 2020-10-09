@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MusicNetwork
+
+  Created by Genar Codina Reverter on 07/10/2020.
+  Copyright © 2020 Genar Codina Reverter. All rights reserved.
+*/
+
+// MARK: - Music items
+"music_items_duration_title" = "Duration";
+"music_items_genre_title" = "Genre";
+"music_items_search_placeholder" = "Escriba una opción para buscar";
