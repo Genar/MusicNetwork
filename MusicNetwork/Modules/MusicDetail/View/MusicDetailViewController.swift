@@ -24,6 +24,7 @@ class MusicDetailViewController: UIViewController {
     var musicItems: [MusicItem]?
     var musicItem: MusicItem?
     var indexPath: IndexPath?
+    var indexDelegate: KeepIndexDelegate?
 
     override func viewDidLoad() {
         
@@ -106,10 +107,12 @@ class MusicDetailViewController: UIViewController {
             if (indexPath.row > 0) {
                 self.indexPath = IndexPath(item: indexPath.row - 1, section: 0)
                 self.setupMedia()
+                indexDelegate?.updateIndex(index: self.indexPath)
             } else if (indexPath.row == 0) {
                 if let numMusicItems = self.musicItems?.count {
                     self.indexPath = IndexPath(item: numMusicItems - 1, section: 0)
                     self.setupMedia()
+                    indexDelegate?.updateIndex(index: self.indexPath)
                 }
             }
         }
@@ -121,9 +124,11 @@ class MusicDetailViewController: UIViewController {
            let musicItems = self.musicItems {
             if (indexPath.row < musicItems.count - 1) {
                 self.indexPath = IndexPath(row: indexPath.row + 1, section: 0)
+                indexDelegate?.updateIndex(index: self.indexPath)
                 self.setupMedia()
             } else if (indexPath.row == musicItems.count - 1) {
                 self.indexPath = IndexPath(row: 0, section: 0)
+                indexDelegate?.updateIndex(index: self.indexPath)
                 self.setupMedia()
             }
         }

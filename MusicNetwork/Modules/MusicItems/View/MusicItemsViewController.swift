@@ -16,13 +16,20 @@ class MusicItemsViewController: UIViewController {
     let kMusicItemCellIdentifier: String = "MusicItemTableViewCell"
     let kDetailMusicSegue = "DetailMusicSegue"
     var musicItems: [MusicItem] = []
-    var presenter:MusicItemsPresenterInterface?
+    var presenter: MusicItemsPresenterInterface?
     var selectedIndexPath: IndexPath = IndexPath(row: 0, section: 0)
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         setupSearchBar()
+        hideNavigationBackButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        musicItemsTableView.selectRow(at: selectedIndexPath, animated: false, scrollPosition: .none)
     }
     
     // MARK: - Navigation
@@ -34,6 +41,7 @@ class MusicItemsViewController: UIViewController {
                let indexPath = musicItemsTableView.indexPathForSelectedRow {
                 viewController.indexPath = indexPath
                 viewController.musicItems = musicItems
+                viewController.indexDelegate = self
             }
         }
     }
@@ -72,6 +80,11 @@ class MusicItemsViewController: UIViewController {
         
         self.searchBar.delegate = self
     }
+    
+    private func hideNavigationBackButton() {
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+    }
 }
 
 // Mark - Table View Data source
@@ -102,7 +115,7 @@ extension MusicItemsViewController: UITableViewDataSource {
 extension MusicItemsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedIndexPath = indexPath
         self.performSegue(withIdentifier: kDetailMusicSegue, sender: self)
     }
 }
@@ -111,9 +124,12 @@ extension MusicItemsViewController: MusicItemsViewInterface {
     
     func showMusicItems(for musicItems: [MusicItem]) {
         
-        self.musicItems = musicItems
-        self.sortItems()
-        musicItemsTableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.musicItems = musicItems
+            self.sortItems()
+            self.musicItemsTableView.reloadData()
+        }
     }
 }
 
@@ -152,5 +168,14 @@ extension MusicItemsViewController: UISearchBarDelegate {
         
         self.sortItems()
         musicItemsTableView.reloadData()
+    }
+}
+
+extension MusicItemsViewController: KeepIndexDelegate {
+    
+    func updateIndex(index: IndexPath?) {
+        
+        guard let idx = index else { return }
+        self.selectedIndexPath = idx
     }
 }

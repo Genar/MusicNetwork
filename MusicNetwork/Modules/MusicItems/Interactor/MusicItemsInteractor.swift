@@ -44,9 +44,7 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
                     let decoder = JSONDecoder()
                     let model = try decoder.decode(SearchResponse.self, from:
                         dataResponse) //Decode JSON Response Data
-                    DispatchQueue.main.async { [weak self] in
-                        self?.output?.musicItemsDidFetch(musicItems: model.results)
-                    }
+                        self.output?.musicItemsDidFetch(musicItems: model.results)
                 } catch let parsingError {
                     print("Error", parsingError)
                 }

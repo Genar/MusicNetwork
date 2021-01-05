@@ -38,7 +38,7 @@ extension MusicItemsPresenter: MusicItemsInteractorOutput {
         
         // Format dates
         let musicItemsFormatted = formatDates(musicItems: musicItems)
-        view?.showMusicItems(for: musicItemsFormatted)
+        self.view?.showMusicItems(for: musicItemsFormatted)
     }
     
     // We will format some fields like releaseDate

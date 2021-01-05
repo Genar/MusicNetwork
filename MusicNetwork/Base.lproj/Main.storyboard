@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uiu-E9-p4V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uiu-E9-p4V">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -286,14 +286,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-PA-UI9">
-                                                <rect key="frame" x="10" y="524" width="354" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-PA-UI9">
+                                                <rect key="frame" x="40" y="524" width="294" height="46"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-fP-vn7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="6Ba-aQ-TQB"/>
-                                                            <constraint firstAttribute="height" constant="50" id="iyF-17-R2A"/>
+                                                            <constraint firstAttribute="width" constant="46" id="6Ba-aQ-TQB"/>
+                                                            <constraint firstAttribute="height" constant="46" id="iyF-17-R2A"/>
                                                         </constraints>
                                                         <state key="normal" image="Instagram"/>
                                                         <connections>
@@ -301,10 +301,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-fk-10l">
-                                                        <rect key="frame" x="76" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="62" y="0.0" width="46" height="46"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="MmU-Hc-0ri"/>
-                                                            <constraint firstAttribute="width" constant="50" id="sRt-eh-vsF"/>
+                                                            <constraint firstAttribute="height" constant="46" id="MmU-Hc-0ri"/>
+                                                            <constraint firstAttribute="width" constant="46" id="sRt-eh-vsF"/>
                                                         </constraints>
                                                         <state key="normal" image="FacebookMessenger"/>
                                                         <connections>
@@ -312,10 +312,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80K-Q5-Q7Y">
-                                                        <rect key="frame" x="152" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="124" y="0.0" width="46" height="46"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="31Y-8x-8no"/>
-                                                            <constraint firstAttribute="height" constant="50" id="gVu-9B-0v4"/>
+                                                            <constraint firstAttribute="width" constant="46" id="31Y-8x-8no"/>
+                                                            <constraint firstAttribute="height" constant="46" id="gVu-9B-0v4"/>
                                                         </constraints>
                                                         <state key="normal" image="Whatsapp"/>
                                                         <connections>
@@ -323,10 +323,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmG-mH-xwu">
-                                                        <rect key="frame" x="228" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="186" y="0.0" width="46" height="46"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="I9u-QC-dt4"/>
-                                                            <constraint firstAttribute="width" constant="50" id="L1w-A7-dgT"/>
+                                                            <constraint firstAttribute="height" constant="46" id="I9u-QC-dt4"/>
+                                                            <constraint firstAttribute="width" constant="46" id="L1w-A7-dgT"/>
                                                         </constraints>
                                                         <state key="normal" image="Message"/>
                                                         <connections>
@@ -334,10 +334,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-ma-3nJ">
-                                                        <rect key="frame" x="304" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="248" y="0.0" width="46" height="46"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="KbX-EL-qak"/>
-                                                            <constraint firstAttribute="width" constant="50" id="X7w-RL-VVa"/>
+                                                            <constraint firstAttribute="height" constant="46" id="KbX-EL-qak"/>
+                                                            <constraint firstAttribute="width" constant="46" id="X7w-RL-VVa"/>
                                                         </constraints>
                                                         <state key="normal" image="Line"/>
                                                         <connections>
@@ -382,7 +382,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="fDK-Rp-Jn2" firstAttribute="trailing" secondItem="vH2-tl-28r" secondAttribute="trailing" constant="394" id="4ya-WH-fFE"/>
+                                    <constraint firstItem="fDK-Rp-Jn2" firstAttribute="trailing" secondItem="vH2-tl-28r" secondAttribute="trailing" constant="-20" id="HiO-BU-MSm"/>
                                     <constraint firstItem="vH2-tl-28r" firstAttribute="top" secondItem="fDK-Rp-Jn2" secondAttribute="top" constant="10" id="NPH-pO-fn5"/>
                                     <constraint firstItem="fDK-Rp-Jn2" firstAttribute="width" secondItem="1wf-tE-3Ig" secondAttribute="width" multiplier="0.903382" id="Rfq-2E-V3Y"/>
                                     <constraint firstItem="fDK-Rp-Jn2" firstAttribute="bottom" secondItem="vH2-tl-28r" secondAttribute="bottom" constant="200" id="azP-qA-wbx"/>

@@ -48,6 +48,7 @@
 		EDC1C0142326A700004E4A94 /* MusicItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0132326A700004E4A94 /* MusicItemsRouter.swift */; };
 		EDC1C0162326A8DE004E4A94 /* MusicItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0152326A8DE004E4A94 /* MusicItemsPresenter.swift */; };
 		EDC1C0192326B89E004E4A94 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0182326B89E004E4A94 /* SearchResponse.swift */; };
+		EDD651D125A4C76E00F1D7D7 /* KeepIndexDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		EDC1C0132326A700004E4A94 /* MusicItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemsRouter.swift; sourceTree = "<group>"; };
 		EDC1C0152326A8DE004E4A94 /* MusicItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemsPresenter.swift; sourceTree = "<group>"; };
 		EDC1C0182326B89E004E4A94 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepIndexDelegate.swift; sourceTree = "<group>"; };
 		F1DBBCA655F4B08B607AF31D /* Pods-MusicNetworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetworkTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicNetworkTests/Pods-MusicNetworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -548,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC1C0112326A5E2004E4A94 /* MusicItemsProtocols.swift */,
+				EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				EDAF8895232A2F500023AA8D /* LoginPresenter.swift in Sources */,
 				EDA76CD22327BF2300FC8307 /* EAImageManager.swift in Sources */,
 				ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */,
+				EDD651D125A4C76E00F1D7D7 /* KeepIndexDelegate.swift in Sources */,
 				EDC1BFD2232676E7004E4A94 /* AppDelegate.swift in Sources */,
 				EDC1C00923268EF5004E4A94 /* MusicItem.swift in Sources */,
 				EDAF888F232A2C1F0023AA8D /* LoginRouter.swift in Sources */,
