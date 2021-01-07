@@ -58,7 +58,7 @@ public struct MusicItem: Codable {
     var primaryGenreId: Int?
     var feedUrl: String?
     var artworkUrl600: String?
-    var genreIds: [Int]?
+    var genreIds: [String]?
     var genres: [String]?
     var copyright: String?
 }

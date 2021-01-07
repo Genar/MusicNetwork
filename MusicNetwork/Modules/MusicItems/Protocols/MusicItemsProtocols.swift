@@ -23,6 +23,10 @@ protocol MusicItemsPresenterInterface : class {
     
     func fetchMusicItems(toSearch: String, limit: Int)
     func showDetails(for musicItems: MusicItem)
+    
+    // Genar GlobalQueue: Comment fetchMusicItemsGlobalQueue.
+    // It is used only as an alternative way to fetch items.
+    func fetchMusicItemsGlobalQueue(toSearch: String, limit: Int)
 }
 
 // Protocol that defines the interactor's use case.
@@ -30,6 +34,10 @@ protocol MusicItemsInteractorInput : class {
     
     var output:MusicItemsInteractorOutput? {get set}
     func fetchMusicItems(toSearch: String, limit: Int)
+    
+    // Genar GlobalQueue: Comment fetchMusicItemsGlobalQueue.
+    // It is used only as an alternative way to fetch items.
+    func fetchMusicItemsGlobalQueue(toSearch: String, limit: Int)
 }
 
 // Protocol that defines the commands sent from the interactor to the presenter.
