@@ -21,19 +21,15 @@ class MusicItemsPresenter: MusicItemsPresenterInterface {
     
     func fetchMusicItems(toSearch: String, limit: Int) {
         
-        interactor?.fetchMusicItems(toSearch: toSearch, limit: limit)
+        //interactor?.fetchMusicItems(toSearch: toSearch, limit: limit)
+        interactor?.fetchMusicItemsGlobalQueue(toSearch: toSearch, limit: limit)
+        //interactor?.fetchMusicItemsDispatchWorkItem(toSearch: toSearch, limit: limit)
+        //interactor?.fetchMusicItemsDispatchWorkItemWithDependency(toSearch: toSearch, limit: limit)
     }
     
     func showDetails(for musicItem:MusicItem) {
         
         router?.presentDetails(for: musicItem)
-    }
-    
-    // Genar GlobalQueue: Comment this method.
-    // It is used to show an alternative way of fetching items with a Global Queue
-    func fetchMusicItemsGlobalQueue(toSearch: String, limit: Int) {
-        
-        interactor?.fetchMusicItemsGlobalQueue(toSearch: toSearch, limit: limit)
     }
 }
 

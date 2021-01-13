@@ -17,6 +17,8 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
     let basePathURL: String
     let basePathSearchURL: String
     
+    private var dataResponse: Data?
+    
     var musicItems = [MusicItem]()
     
     init() {
@@ -44,7 +46,6 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
         
         DispatchQueue.global(qos: .utility).async { [weak self] in
             
-            //let startTime = Date()
             guard let self = self else { return }
             
             let fullUrlString: String = String(format: self.basePathSearchURL, toSearch, limit)
@@ -52,9 +53,51 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
             guard let url = URL(string: urlEncodedString) else { return }
             guard let dataResponse = try? Data(contentsOf: url) else { return }
             self.notifyResponse(dataResponse: dataResponse)
-            //let timeDifference = Date().timeIntervalSince(startTime) * 1000
-            //print("---time difference:\(timeDifference) ms")
         }
+    }
+    
+    func fetchMusicItemsDispatchWorkItem(toSearch: String, limit: Int) {
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            
+            guard let self = self else { return }
+            
+            let fullUrlString: String = String(format: self.basePathSearchURL, toSearch, limit)
+            guard let urlEncodedString:String = fullUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+            guard let url = URL(string: urlEncodedString) else { return }
+            guard let dataResponse = try? Data(contentsOf: url) else { return }
+            self.notifyResponse(dataResponse: dataResponse)
+        }
+        
+        DispatchQueue.global(qos: .utility).async(execute: workItem)
+    }
+    
+    func fetchMusicItemsDispatchWorkItemWithDependency(toSearch: String, limit: Int) {
+        
+        let queue = DispatchQueue.global(qos: .utility)
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            
+            guard let self = self else { return }
+            let fullUrlString: String = String(format: self.basePathSearchURL, toSearch, limit)
+            guard let urlEncodedString:String = fullUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+            guard let url = URL(string: urlEncodedString) else { return }
+            guard let dataResponse = try? Data(contentsOf: url) else { return }
+            self.dataResponse = dataResponse
+        }
+        
+        let workItemUpdateUI = DispatchWorkItem { [weak self] in
+            
+            guard let self = self else { return }
+            guard let dataResponse = self.dataResponse else { return }
+            self.notifyResponse(dataResponse: dataResponse)
+        }
+        
+        workItem.notify(queue: queue,
+                        execute: workItemUpdateUI)
+        
+        queue.async(execute: workItem)
+        
     }
     
     private func notifyResponse(dataResponse: Data) {

@@ -155,9 +155,6 @@ extension MusicItemsViewController: UISearchBarDelegate {
                     self.view.endEditing(true)
                     
                     presenter?.fetchMusicItems(toSearch: inputText, limit: 200)
-                    
-                    // Genar GlobalQueue:
-                    //presenter?.fetchMusicItemsGlobalQueue(toSearch: inputText, limit: 200)
                 }
         }
     }
