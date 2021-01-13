@@ -20,6 +20,8 @@ class EAImageManager {
         return imageManager
     }()
     
+    private let queue = OperationQueue()
+    
     // MARK: - Properties
     
     // Initialization
@@ -38,15 +40,56 @@ class EAImageManager {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
+//    func downloadImage(from url: URL, imageView: UIImageView) {
+//
+//        getData(from: url) { data, response, error in
+//            guard let data = data, error == nil else { return }
+//            DispatchQueue.main.async() {
+//                if let img = UIImage(data: data) {
+//                    imageView.image = img
+//                }
+//            }
+//        }
+//    }
+    
+//    func downloadImage(from url: URL, imageView: UIImageView) {
+//
+//        getData(from: url) { data, response, error in
+//            guard let data = data, error == nil else { return }
+//            if let img = UIImage(data: data) {
+//                let op = TiltShiftOperation(image: img)
+//                op.start()
+//                DispatchQueue.main.async() {
+//                    imageView.image = op.outputImage
+//                }
+//            }
+//        }
+//    }
+    
     func downloadImage(from url: URL, imageView: UIImageView) {
         
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            DispatchQueue.main.async() {
-                if let img = UIImage(data: data) {
-                    imageView.image = img
-                }
+        let op = NetworkImageOperation(url: url)
+        op.completionBlock = {
+            DispatchQueue.main.async {
+                imageView.image = op.image
             }
         }
+        queue.addOperation(op)
     }
+    
+//    func downloadImage(from url: URL, imageView: UIImageView) {
+//
+//        getData(from: url) { data, response, error in
+//            guard let data = data, error == nil else { return }
+//            if let img = UIImage(data: data) {
+//                let op = TiltShiftOperation(image: img)
+//                op.completionBlock = {
+//                    DispatchQueue.main.async() {
+//                        imageView.image = op.outputImage
+//                    }
+//                }
+//                self.queue.addOperation(op)
+//            }
+//        }
+//    }
 }

@@ -14,6 +14,9 @@
 		ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */; };
 		ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */; };
 		ED3B61EC232FEDB8008DE713 /* EALineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61EB232FEDB8008DE713 /* EALineManager.swift */; };
+		ED503AC325AF4CEC00622EF6 /* TiltShiftOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED503AC225AF4CEC00622EF6 /* TiltShiftOperation.swift */; };
+		ED503ACC25AF66D900622EF6 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED503ACB25AF66D900622EF6 /* AsyncOperation.swift */; };
+		ED503AD125AF68A700622EF6 /* NetworkImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED503AD025AF68A700622EF6 /* NetworkImageOperation.swift */; };
 		ED5AE5DD252E358500B9F61B /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5AE5DC252E358500B9F61B /* String+Localizable.swift */; };
 		ED5AE5DE252E358500B9F61B /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5AE5DC252E358500B9F61B /* String+Localizable.swift */; };
 		ED5AE5FF252E381500B9F61B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED5AE602252E381500B9F61B /* Localizable.strings */; };
@@ -48,6 +51,7 @@
 		EDC1C0142326A700004E4A94 /* MusicItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0132326A700004E4A94 /* MusicItemsRouter.swift */; };
 		EDC1C0162326A8DE004E4A94 /* MusicItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0152326A8DE004E4A94 /* MusicItemsPresenter.swift */; };
 		EDC1C0192326B89E004E4A94 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0182326B89E004E4A94 /* SearchResponse.swift */; };
+		EDC8596425AF40BB00D62904 /* TiltShiftFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8596325AF40BB00D62904 /* TiltShiftFilter.swift */; };
 		EDD651D125A4C76E00F1D7D7 /* KeepIndexDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +85,9 @@
 		ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAWhatsAppManager.swift; sourceTree = "<group>"; };
 		ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAMessageManager.swift; sourceTree = "<group>"; };
 		ED3B61EB232FEDB8008DE713 /* EALineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EALineManager.swift; sourceTree = "<group>"; };
+		ED503AC225AF4CEC00622EF6 /* TiltShiftOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltShiftOperation.swift; sourceTree = "<group>"; };
+		ED503ACB25AF66D900622EF6 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		ED503AD025AF68A700622EF6 /* NetworkImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageOperation.swift; sourceTree = "<group>"; };
 		ED5AE5DC252E358500B9F61B /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		ED5AE5F4252E374500B9F61B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		ED5AE5F5252E374500B9F61B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -122,6 +129,7 @@
 		EDC1C0132326A700004E4A94 /* MusicItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemsRouter.swift; sourceTree = "<group>"; };
 		EDC1C0152326A8DE004E4A94 /* MusicItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemsPresenter.swift; sourceTree = "<group>"; };
 		EDC1C0182326B89E004E4A94 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		EDC8596325AF40BB00D62904 /* TiltShiftFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltShiftFilter.swift; sourceTree = "<group>"; };
 		EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepIndexDelegate.swift; sourceTree = "<group>"; };
 		F1DBBCA655F4B08B607AF31D /* Pods-MusicNetworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetworkTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicNetworkTests/Pods-MusicNetworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -418,6 +426,7 @@
 		EDC1BFC5232676E7004E4A94 = {
 			isa = PBXGroup;
 			children = (
+				EDE0B05025AF402B00DEA88A /* Utils */,
 				ED5AE602252E381500B9F61B /* Localizable.strings */,
 				EDC1BFD0232676E7004E4A94 /* MusicNetwork */,
 				EDC1BFE5232676E9004E4A94 /* MusicNetworkTests */,
@@ -563,6 +572,17 @@
 				EDA76CC42327A75900FC8307 /* MusicDetail */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		EDE0B05025AF402B00DEA88A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EDC8596325AF40BB00D62904 /* TiltShiftFilter.swift */,
+				ED503AC225AF4CEC00622EF6 /* TiltShiftOperation.swift */,
+				ED503ACB25AF66D900622EF6 /* AsyncOperation.swift */,
+				ED503AD025AF68A700622EF6 /* NetworkImageOperation.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -808,10 +828,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC1C0122326A5E2004E4A94 /* MusicItemsProtocols.swift in Sources */,
+				ED503ACC25AF66D900622EF6 /* AsyncOperation.swift in Sources */,
 				EDAF8893232A2ED50023AA8D /* LoginInteractor.swift in Sources */,
 				EDAF889B232AA1F20023AA8D /* EAGoogleManager.swift in Sources */,
 				EDC1BFD4232676E7004E4A94 /* MusicItemsViewController.swift in Sources */,
 				EDA76CCC2327A9A400FC8307 /* MusicDetailViewController.swift in Sources */,
+				ED503AC325AF4CEC00622EF6 /* TiltShiftOperation.swift in Sources */,
 				EDAF8895232A2F500023AA8D /* LoginPresenter.swift in Sources */,
 				EDA76CD22327BF2300FC8307 /* EAImageManager.swift in Sources */,
 				ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */,
@@ -819,10 +841,12 @@
 				EDC1BFD2232676E7004E4A94 /* AppDelegate.swift in Sources */,
 				EDC1C00923268EF5004E4A94 /* MusicItem.swift in Sources */,
 				EDAF888F232A2C1F0023AA8D /* LoginRouter.swift in Sources */,
+				ED503AD125AF68A700622EF6 /* NetworkImageOperation.swift in Sources */,
 				ED3B61EC232FEDB8008DE713 /* EALineManager.swift in Sources */,
 				EDC1C00F2326A361004E4A94 /* Background+Queue.swift in Sources */,
 				EDAF8898232A5C110023AA8D /* EAFacebookManager.swift in Sources */,
 				EDA76CC1232785B800FC8307 /* Date+CustomFormatter.swift in Sources */,
+				EDC8596425AF40BB00D62904 /* TiltShiftFilter.swift in Sources */,
 				EDAF8891232A2D540023AA8D /* LoginProtocols.swift in Sources */,
 				EDB96141232ABA590055E502 /* EAKeyChainService.swift in Sources */,
 				ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */,
