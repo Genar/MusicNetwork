@@ -68,13 +68,13 @@ class EAImageManager {
     
     func downloadImage(from url: URL, imageView: UIImageView) {
         
-        let op = NetworkImageOperation(url: url)
-        op.completionBlock = {
+        let operation = NetworkImageOperation(url: url)
+        operation.completionBlock = {
             DispatchQueue.main.async {
-                imageView.image = op.image
+                imageView.image = operation.image
             }
         }
-        queue.addOperation(op)
+        queue.addOperation(operation)
     }
     
 //    func downloadImage(from url: URL, imageView: UIImageView) {
