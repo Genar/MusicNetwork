@@ -32,8 +32,9 @@ class MusicItemTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Render without indexPath for cancellation
     func render(musicItem: MusicItem) -> Void {
-        
+
         songTitleLabel.text =  musicItem.trackName
         artistLabel.text = musicItem.artistName
         releaseDateLabel.text = musicItem.releaseDate
@@ -45,16 +46,43 @@ class MusicItemTableViewCell: UITableViewCell {
             let seconds: Int = durationInSeconds % 60
             durationLabel.text = String(format: "%d' %d''",  minutes, seconds)
         }
-        
+
         if let trackPrice = musicItem.trackPrice,
            let currency = musicItem.currency,
            let formattedAmount = trackPrice.formattedAmount {
             priceLabel.text = String(format:"%@ %@", formattedAmount, currency)
         }
-        
+
         if let artworkURL = musicItem.artworkUrl100,
            let urlImage:URL = URL(string: artworkURL) {
             EAImageManager.shared().downloadImage(from: urlImage, imageView: self.artistImageView)
         }
     }
+    
+    // MARK: - Render with indexPath for cancellation
+//    func render(musicItem: MusicItem, indexPath: IndexPath) -> Void {
+//
+//        songTitleLabel.text =  musicItem.trackName
+//        artistLabel.text = musicItem.artistName
+//        releaseDateLabel.text = musicItem.releaseDate
+//        genreLabel.text = musicItem.primaryGenreName
+//        albumLabel.text = musicItem.collectionName
+//        if let durationInMillis = musicItem.trackTimeMillis {
+//            let durationInSeconds = durationInMillis / 1000
+//            let minutes: Int = durationInSeconds / 60
+//            let seconds: Int = durationInSeconds % 60
+//            durationLabel.text = String(format: "%d' %d''",  minutes, seconds)
+//        }
+//
+//        if let trackPrice = musicItem.trackPrice,
+//           let currency = musicItem.currency,
+//           let formattedAmount = trackPrice.formattedAmount {
+//            priceLabel.text = String(format:"%@ %@", formattedAmount, currency)
+//        }
+//
+//        if let artworkURL = musicItem.artworkUrl100,
+//           let urlImage: URL = URL(string: artworkURL) {
+//            EAImageManager.shared().downloadImage(from: urlImage, imageView: self.artistImageView, indexPath: indexPath)
+//        }
+//    }
 }

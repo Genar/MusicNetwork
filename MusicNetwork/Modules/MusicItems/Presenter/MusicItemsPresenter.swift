@@ -9,7 +9,7 @@
 import Foundation
 
 class MusicItemsPresenter: MusicItemsPresenterInterface {
-
+    
     // Reference to the view (weak to avoid retain cycle).
     weak var view: MusicItemsViewInterface?
     // Reference to the interactor interface.
@@ -30,6 +30,11 @@ class MusicItemsPresenter: MusicItemsPresenterInterface {
     func showDetails(for musicItem:MusicItem) {
         
         router?.presentDetails(for: musicItem)
+    }
+    
+    func cancelOperations(indexPath: IndexPath) {
+        
+        interactor?.cancelOperations(indexPath: indexPath)
     }
 }
 

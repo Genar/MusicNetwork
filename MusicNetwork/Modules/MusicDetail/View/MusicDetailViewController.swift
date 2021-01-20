@@ -138,7 +138,7 @@ class MusicDetailViewController: UIViewController {
     // MARK: - Private
     
     private func setupMedia() {
-        
+
         guard let idxPath = self.indexPath else { return }
         self.musicItem = self.musicItems?[idxPath.row]
         if let musicItem = self.musicItem {
@@ -158,4 +158,29 @@ class MusicDetailViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - setupMedia with indexPath for cancellation (pag. 78)
+//    private func setupMedia() {
+//
+//        guard let idxPath = self.indexPath else { return }
+//        self.musicItem = self.musicItems?[idxPath.row]
+//        if let musicItem = self.musicItem {
+//            songLabel.text = musicItem.trackName
+//            artistLabel.text = musicItem.artistName
+//            albumLabel.text = musicItem.collectionName
+//            dateLabel.text = musicItem.releaseDate
+//            genreLabel.text = musicItem.primaryGenreName
+//            if let artworkUrl100 = musicItem.artworkUrl100,
+//               let urlImage:URL = URL(string: artworkUrl100) {
+//                EAImageManager.shared().downloadImage(from: urlImage,
+//                                                      imageView: self.artistImageView,
+//                                                      indexPath: idxPath)
+//            }
+//            if let previewUrl = musicItem.previewUrl,
+//               let urlPreview: URL = URL(string: previewUrl) {
+//                let request: URLRequest = URLRequest(url: urlPreview)
+//                artistWebView.load(request)
+//            }
+//        }
+//    }
 }

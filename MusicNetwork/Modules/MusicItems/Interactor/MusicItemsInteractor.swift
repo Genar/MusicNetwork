@@ -10,7 +10,7 @@ import Foundation
 
 // The interactor responsible for implementing the business logic of the module.
 class MusicItemsInteractor: MusicItemsInteractorInput {
-    
+
     // Reference to the presenter's output interface
     weak var output: MusicItemsInteractorOutput?
     
@@ -30,14 +30,14 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
     func fetchMusicItems(toSearch: String, limit: Int) {
 
         let fullUrlString: String = String(format: self.basePathSearchURL, toSearch, limit)
-        guard let urlEncodedString:String = fullUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        guard let urlEncodedString: String = fullUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         guard let url = URL(string: urlEncodedString) else { return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                 error == nil else {
                     print(error?.localizedDescription ?? "Response Error")
                     return }
-            self.notifyResponse(dataResponse: dataResponse)
+            self.parseAndNotifyResponse(dataResponse: dataResponse)
         }
         task.resume()
     }
@@ -52,7 +52,7 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
             guard let urlEncodedString:String = fullUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
             guard let url = URL(string: urlEncodedString) else { return }
             guard let dataResponse = try? Data(contentsOf: url) else { return }
-            self.notifyResponse(dataResponse: dataResponse)
+            self.parseAndNotifyResponse(dataResponse: dataResponse)
         }
     }
     
@@ -66,7 +66,7 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
             guard let urlEncodedString:String = fullUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
             guard let url = URL(string: urlEncodedString) else { return }
             guard let dataResponse = try? Data(contentsOf: url) else { return }
-            self.notifyResponse(dataResponse: dataResponse)
+            self.parseAndNotifyResponse(dataResponse: dataResponse)
         }
         
         DispatchQueue.global(qos: .utility).async(execute: workItem)
@@ -90,25 +90,27 @@ class MusicItemsInteractor: MusicItemsInteractorInput {
             
             guard let self = self else { return }
             guard let dataResponse = self.dataResponse else { return }
-            self.notifyResponse(dataResponse: dataResponse)
+            self.parseAndNotifyResponse(dataResponse: dataResponse)
         }
         
-        workItem.notify(queue: queue,
-                        execute: workItemUpdateUI)
+        workItem.notify(queue: queue, execute: workItemUpdateUI)
         
         queue.async(execute: workItem)
         
     }
     
-    private func notifyResponse(dataResponse: Data) {
+    func cancelOperations(indexPath: IndexPath) {
+        
+        EAImageManager.shared().cancelOperations(indexPath: indexPath)
+    }
+    
+    private func parseAndNotifyResponse(dataResponse: Data) {
         
         do {
-            _ = try JSONSerialization.jsonObject(with:
-                dataResponse, options: [])
-                let decoder = JSONDecoder()
-                let model = try decoder.decode(SearchResponse.self, from:
-                    dataResponse)
-                    self.output?.musicItemsDidFetch(musicItems: model.results)
+            _ = try JSONSerialization.jsonObject(with: dataResponse, options: [])
+            let decoder = JSONDecoder()
+            let model = try decoder.decode(SearchResponse.self, from: dataResponse)
+            self.output?.musicItemsDidFetch(musicItems: model.results)
         } catch let DecodingError.dataCorrupted(context) {
             print(context)
         } catch let DecodingError.keyNotFound(key, context) {

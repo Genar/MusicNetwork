@@ -103,11 +103,17 @@ extension MusicItemsViewController: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: kMusicItemCellIdentifier, for: indexPath) as? MusicItemTableViewCell {
             let musicItem: MusicItem = musicItems[indexPath.row]
-            cell.render(musicItem: musicItem)
+            cell.render(musicItem: musicItem) // Without cancellation
+            //cell.render(musicItem: musicItem, indexPath: indexPath) // With cancellation
             return cell
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        presenter?.cancelOperations(indexPath: indexPath)
     }
 }
 
@@ -115,6 +121,7 @@ extension MusicItemsViewController: UITableViewDataSource {
 extension MusicItemsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         selectedIndexPath = indexPath
         self.performSegue(withIdentifier: kDetailMusicSegue, sender: self)
     }
