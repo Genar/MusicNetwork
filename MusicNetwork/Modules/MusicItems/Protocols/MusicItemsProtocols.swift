@@ -55,3 +55,8 @@ protocol MusicItemsRouterInput : class {
     static func assembleModule() -> UIViewController
 }
 
+protocol Router: class {
+
+    func presentMusicItemsScreen(in window:UIWindow)
+}
+

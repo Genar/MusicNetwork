@@ -3,13 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		635D46562967C1015244EA1F /* Pods_MusicNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBFDE4CB62B470EEE465EF8 /* Pods_MusicNetwork.framework */; };
-		9BB8CDCABFBC4BA7BB00C230 /* Pods_MusicNetworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A138E3383B2177C277625919 /* Pods_MusicNetworkTests.framework */; };
-		E3FD05C708300959678D1625 /* Pods_MusicNetworkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171DDA5EE285BE4529E0E837 /* Pods_MusicNetworkUITests.framework */; };
 		ED3B61E3232FE4DD008DE713 /* OpenUrl+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E2232FE4DD008DE713 /* OpenUrl+String.swift */; };
 		ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */; };
 		ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */; };
@@ -28,13 +25,6 @@
 		EDA76CCF2327B89700FC8307 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA76CCE2327B89700FC8307 /* WebKit.framework */; };
 		EDA76CD22327BF2300FC8307 /* EAImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CD12327BF2300FC8307 /* EAImageManager.swift */; };
 		EDA76CD72327C77E00FC8307 /* EAInstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CD62327C77E00FC8307 /* EAInstagramManager.swift */; };
-		EDAF8887232A2A2A0023AA8D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8886232A2A2A0023AA8D /* LoginViewController.swift */; };
-		EDAF888F232A2C1F0023AA8D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF888E232A2C1F0023AA8D /* LoginRouter.swift */; };
-		EDAF8891232A2D540023AA8D /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8890232A2D540023AA8D /* LoginProtocols.swift */; };
-		EDAF8893232A2ED50023AA8D /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8892232A2ED50023AA8D /* LoginInteractor.swift */; };
-		EDAF8895232A2F500023AA8D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8894232A2F500023AA8D /* LoginPresenter.swift */; };
-		EDAF8898232A5C110023AA8D /* EAFacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8897232A5C110023AA8D /* EAFacebookManager.swift */; };
-		EDAF889B232AA1F20023AA8D /* EAGoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF889A232AA1F20023AA8D /* EAGoogleManager.swift */; };
 		EDB96141232ABA590055E502 /* EAKeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB96140232ABA590055E502 /* EAKeyChainService.swift */; };
 		EDB96146232ABAE90055E502 /* EAKeychainServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB96145232ABAE90055E502 /* EAKeychainServiceProtocol.swift */; };
 		EDC1BFD2232676E7004E4A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1BFD1232676E7004E4A94 /* AppDelegate.swift */; };
@@ -74,14 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		171DDA5EE285BE4529E0E837 /* Pods_MusicNetworkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicNetworkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EBFDE4CB62B470EEE465EF8 /* Pods_MusicNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BFEB9087A922F393C956F61 /* Pods-MusicNetworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetworkTests.release.xcconfig"; path = "Target Support Files/Pods-MusicNetworkTests/Pods-MusicNetworkTests.release.xcconfig"; sourceTree = "<group>"; };
-		9C5B747FC0B0D5E54FC353D1 /* Pods-MusicNetworkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetworkUITests.release.xcconfig"; path = "Target Support Files/Pods-MusicNetworkUITests/Pods-MusicNetworkUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9F50FB2149494283C1D43F7D /* Pods-MusicNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetwork.release.xcconfig"; path = "Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork.release.xcconfig"; sourceTree = "<group>"; };
-		A138E3383B2177C277625919 /* Pods_MusicNetworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicNetworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68073446A36B6B51DA0B5DC /* Pods-MusicNetworkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetworkUITests.debug.xcconfig"; path = "Target Support Files/Pods-MusicNetworkUITests/Pods-MusicNetworkUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D1FD501E9F983F6DAB6408F0 /* Pods-MusicNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetwork.debug.xcconfig"; path = "Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		ED3B61E2232FE4DD008DE713 /* OpenUrl+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenUrl+String.swift"; sourceTree = "<group>"; };
 		ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAWhatsAppManager.swift; sourceTree = "<group>"; };
 		ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAMessageManager.swift; sourceTree = "<group>"; };
@@ -101,13 +83,6 @@
 		EDA76CCE2327B89700FC8307 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EDA76CD12327BF2300FC8307 /* EAImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAImageManager.swift; sourceTree = "<group>"; };
 		EDA76CD62327C77E00FC8307 /* EAInstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAInstagramManager.swift; sourceTree = "<group>"; };
-		EDAF8886232A2A2A0023AA8D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		EDAF888E232A2C1F0023AA8D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		EDAF8890232A2D540023AA8D /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
-		EDAF8892232A2ED50023AA8D /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		EDAF8894232A2F500023AA8D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		EDAF8897232A5C110023AA8D /* EAFacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAFacebookManager.swift; sourceTree = "<group>"; };
-		EDAF889A232AA1F20023AA8D /* EAGoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAGoogleManager.swift; sourceTree = "<group>"; };
 		EDB96140232ABA590055E502 /* EAKeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAKeyChainService.swift; sourceTree = "<group>"; };
 		EDB96145232ABAE90055E502 /* EAKeychainServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAKeychainServiceProtocol.swift; sourceTree = "<group>"; };
 		EDC1BFCE232676E7004E4A94 /* MusicNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +108,6 @@
 		EDC1C0182326B89E004E4A94 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		EDC8596325AF40BB00D62904 /* TiltShiftFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltShiftFilter.swift; sourceTree = "<group>"; };
 		EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepIndexDelegate.swift; sourceTree = "<group>"; };
-		F1DBBCA655F4B08B607AF31D /* Pods-MusicNetworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicNetworkTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicNetworkTests/Pods-MusicNetworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA76CCF2327B89700FC8307 /* WebKit.framework in Frameworks */,
-				635D46562967C1015244EA1F /* Pods_MusicNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BB8CDCABFBC4BA7BB00C230 /* Pods_MusicNetworkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,26 +130,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3FD05C708300959678D1625 /* Pods_MusicNetworkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		85528C2322A8249D3E758536 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D1FD501E9F983F6DAB6408F0 /* Pods-MusicNetwork.debug.xcconfig */,
-				9F50FB2149494283C1D43F7D /* Pods-MusicNetwork.release.xcconfig */,
-				F1DBBCA655F4B08B607AF31D /* Pods-MusicNetworkTests.debug.xcconfig */,
-				3BFEB9087A922F393C956F61 /* Pods-MusicNetworkTests.release.xcconfig */,
-				A68073446A36B6B51DA0B5DC /* Pods-MusicNetworkUITests.debug.xcconfig */,
-				9C5B747FC0B0D5E54FC353D1 /* Pods-MusicNetworkUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		ED3B61E1232FE4BD008DE713 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,9 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				EDA76CCE2327B89700FC8307 /* WebKit.framework */,
-				2EBFDE4CB62B470EEE465EF8 /* Pods_MusicNetwork.framework */,
-				A138E3383B2177C277625919 /* Pods_MusicNetworkTests.framework */,
-				171DDA5EE285BE4529E0E837 /* Pods_MusicNetworkUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,70 +271,9 @@
 			path = SocialNetwork;
 			sourceTree = "<group>";
 		};
-		EDAF8885232A29140023AA8D /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				EDAF888D232A2BC40023AA8D /* Protocols */,
-				EDAF8888232A2B6E0023AA8D /* View */,
-				EDAF8889232A2B7C0023AA8D /* Interactor */,
-				EDAF888A232A2B920023AA8D /* Presenter */,
-				EDAF888B232A2BA30023AA8D /* Entity */,
-				EDAF888C232A2BB00023AA8D /* Router */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		EDAF8888232A2B6E0023AA8D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EDAF8886232A2A2A0023AA8D /* LoginViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		EDAF8889232A2B7C0023AA8D /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				EDAF8892232A2ED50023AA8D /* LoginInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		EDAF888A232A2B920023AA8D /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				EDAF8894232A2F500023AA8D /* LoginPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		EDAF888B232A2BA30023AA8D /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		EDAF888C232A2BB00023AA8D /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				EDAF888E232A2C1F0023AA8D /* LoginRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		EDAF888D232A2BC40023AA8D /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				EDAF8890232A2D540023AA8D /* LoginProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		EDAF8896232A5BA10023AA8D /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				EDAF8897232A5C110023AA8D /* EAFacebookManager.swift */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
@@ -387,7 +281,6 @@
 		EDAF8899232AA1D60023AA8D /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				EDAF889A232AA1F20023AA8D /* EAGoogleManager.swift */,
 			);
 			path = Google;
 			sourceTree = "<group>";
@@ -435,7 +328,6 @@
 				EDC1BFF0232676E9004E4A94 /* MusicNetworkUITests */,
 				EDC1BFCF232676E7004E4A94 /* Products */,
 				EDA76CCD2327B89600FC8307 /* Frameworks */,
-				85528C2322A8249D3E758536 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -569,7 +461,6 @@
 		EDC1C0172326B11F004E4A94 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				EDAF8885232A29140023AA8D /* Login */,
 				EDC1BFFF23268402004E4A94 /* MusicItems */,
 				EDA76CC42327A75900FC8307 /* MusicDetail */,
 			);
@@ -595,12 +486,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDC1BFF6232676E9004E4A94 /* Build configuration list for PBXNativeTarget "MusicNetwork" */;
 			buildPhases = (
-				A06338F66DB92DA11C96A11D /* [CP] Check Pods Manifest.lock */,
 				EDC1BFCA232676E7004E4A94 /* Sources */,
 				EDC1BFCB232676E7004E4A94 /* Frameworks */,
 				EDC1BFCC232676E7004E4A94 /* Resources */,
-				BC4018433338D0A3614FAE0C /* [CP] Embed Pods Frameworks */,
-				F46AA092A4191B48DB0DE6CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -615,7 +503,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDC1BFF9232676E9004E4A94 /* Build configuration list for PBXNativeTarget "MusicNetworkTests" */;
 			buildPhases = (
-				88E6440879F497CDD8AC4AAC /* [CP] Check Pods Manifest.lock */,
 				EDC1BFDE232676E9004E4A94 /* Sources */,
 				EDC1BFDF232676E9004E4A94 /* Frameworks */,
 				EDC1BFE0232676E9004E4A94 /* Resources */,
@@ -634,7 +521,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDC1BFFC232676E9004E4A94 /* Build configuration list for PBXNativeTarget "MusicNetworkUITests" */;
 			buildPhases = (
-				5BEC6D245F9504DE5833249E /* [CP] Check Pods Manifest.lock */,
 				EDC1BFE9232676E9004E4A94 /* Sources */,
 				EDC1BFEA232676E9004E4A94 /* Frameworks */,
 				EDC1BFEB232676E9004E4A94 /* Resources */,
@@ -722,109 +608,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5BEC6D245F9504DE5833249E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MusicNetworkUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		88E6440879F497CDD8AC4AAC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MusicNetworkTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A06338F66DB92DA11C96A11D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MusicNetwork-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC4018433338D0A3614FAE0C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F46AA092A4191B48DB0DE6CA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusicNetwork/Pods-MusicNetwork-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		EDC1BFCA232676E7004E4A94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -833,25 +616,19 @@
 				EDC1C0122326A5E2004E4A94 /* MusicItemsProtocols.swift in Sources */,
 				ED503ACC25AF66D900622EF6 /* AsyncOperation.swift in Sources */,
 				ED8090F625B1FB3100C53995 /* ImageDataProvider.swift in Sources */,
-				EDAF8893232A2ED50023AA8D /* LoginInteractor.swift in Sources */,
-				EDAF889B232AA1F20023AA8D /* EAGoogleManager.swift in Sources */,
 				EDC1BFD4232676E7004E4A94 /* MusicItemsViewController.swift in Sources */,
 				EDA76CCC2327A9A400FC8307 /* MusicDetailViewController.swift in Sources */,
 				ED503AC325AF4CEC00622EF6 /* TiltShiftOperation.swift in Sources */,
-				EDAF8895232A2F500023AA8D /* LoginPresenter.swift in Sources */,
 				EDA76CD22327BF2300FC8307 /* EAImageManager.swift in Sources */,
 				ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */,
 				EDD651D125A4C76E00F1D7D7 /* KeepIndexDelegate.swift in Sources */,
 				EDC1BFD2232676E7004E4A94 /* AppDelegate.swift in Sources */,
 				EDC1C00923268EF5004E4A94 /* MusicItem.swift in Sources */,
-				EDAF888F232A2C1F0023AA8D /* LoginRouter.swift in Sources */,
 				ED503AD125AF68A700622EF6 /* NetworkImageOperation.swift in Sources */,
 				ED3B61EC232FEDB8008DE713 /* EALineManager.swift in Sources */,
 				EDC1C00F2326A361004E4A94 /* Background+Queue.swift in Sources */,
-				EDAF8898232A5C110023AA8D /* EAFacebookManager.swift in Sources */,
 				EDA76CC1232785B800FC8307 /* Date+CustomFormatter.swift in Sources */,
 				EDC8596425AF40BB00D62904 /* TiltShiftFilter.swift in Sources */,
-				EDAF8891232A2D540023AA8D /* LoginProtocols.swift in Sources */,
 				EDB96141232ABA590055E502 /* EAKeyChainService.swift in Sources */,
 				ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */,
 				EDB96146232ABAE90055E502 /* EAKeychainServiceProtocol.swift in Sources */,
@@ -859,7 +636,6 @@
 				EDC1C0142326A700004E4A94 /* MusicItemsRouter.swift in Sources */,
 				EDC1C0192326B89E004E4A94 /* SearchResponse.swift in Sources */,
 				EDC1C00B2326A042004E4A94 /* MusicItemsInteractor.swift in Sources */,
-				EDAF8887232A2A2A0023AA8D /* LoginViewController.swift in Sources */,
 				EDA76CC3232794AF00FC8307 /* Decimal+StringFormatter.swift in Sources */,
 				EDC1C00723268503004E4A94 /* MusicItemTableViewCell.swift in Sources */,
 				ED3B61E3232FE4DD008DE713 /* OpenUrl+String.swift in Sources */,
@@ -1055,7 +831,6 @@
 		};
 		EDC1BFF7232676E9004E4A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1FD501E9F983F6DAB6408F0 /* Pods-MusicNetwork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1074,7 +849,6 @@
 		};
 		EDC1BFF8232676E9004E4A94 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F50FB2149494283C1D43F7D /* Pods-MusicNetwork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1093,7 +867,6 @@
 		};
 		EDC1BFFA232676E9004E4A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1DBBCA655F4B08B607AF31D /* Pods-MusicNetworkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1115,7 +888,6 @@
 		};
 		EDC1BFFB232676E9004E4A94 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BFEB9087A922F393C956F61 /* Pods-MusicNetworkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1137,7 +909,6 @@
 		};
 		EDC1BFFD232676E9004E4A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A68073446A36B6B51DA0B5DC /* Pods-MusicNetworkUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1158,7 +929,6 @@
 		};
 		EDC1BFFE232676E9004E4A94 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C5B747FC0B0D5E54FC353D1 /* Pods-MusicNetworkUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

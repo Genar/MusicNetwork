@@ -34,45 +34,45 @@ class MusicDetailViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func onInstagramPressed(_ sender: UIButton) {
-        
-        var isPosted = false
-        if  let artistImage = artistImageView.image,
-            let previewUrl = musicItem?.previewUrl,
-            let backgroundImgData = UIImage(named: "User")!.jpegData(compressionQuality: 1.0),
-            let stickerImgData = artistImage.pngData(),
-            let musicItem = self.musicItem {
-            if let trackTimeMillis = musicItem.trackTimeMillis {
-                let durationInSeconds: Int = trackTimeMillis / 1000
-                let durationInMinutes: Int = durationInSeconds / 60
-                if durationInMinutes <= 4 {
-                    isPosted = EAInstagramManager.shared().shareStory(backgroundImageData: backgroundImgData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
-                } else if durationInMinutes > 5 && durationInMinutes <= 10 {
-                    isPosted = EAInstagramManager.shared().shareStory(backgroundTopColor: "#33FF33", backgroundBottomColor: "#FF00FF", stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
-                } else {
-                    do {
-                        if let previewURL = musicItem.previewUrl,
-                           let videoURL = NSURL(string: previewURL) {
-                            let videoData = try Data(contentsOf: videoURL as URL)
-                                isPosted = EAInstagramManager.shared().shareStory(backgroundVideoData: videoData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
-                        }
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
-        print("Is posted in Instagram? \(isPosted)")
-    }
+//    @IBAction func onInstagramPressed(_ sender: UIButton) {
+//        
+//        var isPosted = false
+//        if  let artistImage = artistImageView.image,
+//            let previewUrl = musicItem?.previewUrl,
+//            let backgroundImgData = UIImage(named: "User")!.jpegData(compressionQuality: 1.0),
+//            let stickerImgData = artistImage.pngData(),
+//            let musicItem = self.musicItem {
+//            if let trackTimeMillis = musicItem.trackTimeMillis {
+//                let durationInSeconds: Int = trackTimeMillis / 1000
+//                let durationInMinutes: Int = durationInSeconds / 60
+//                if durationInMinutes <= 4 {
+//                    isPosted = EAInstagramManager.shared().shareStory(backgroundImageData: backgroundImgData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
+//                } else if durationInMinutes > 5 && durationInMinutes <= 10 {
+//                    isPosted = EAInstagramManager.shared().shareStory(backgroundTopColor: "#33FF33", backgroundBottomColor: "#FF00FF", stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
+//                } else {
+//                    do {
+//                        if let previewURL = musicItem.previewUrl,
+//                           let videoURL = NSURL(string: previewURL) {
+//                            let videoData = try Data(contentsOf: videoURL as URL)
+//                                isPosted = EAInstagramManager.shared().shareStory(backgroundVideoData: videoData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
+//                        }
+//                    } catch {
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }
+//        }
+//        print("Is posted in Instagram? \(isPosted)")
+//    }
     
-    @IBAction func onFacebookMessengerPressed(_ sender: UIButton) {
-        
-        if let musicItem = musicItem,
-           let trackViewURL = musicItem.trackViewUrl {
-            let result = EAFacebookManager.shared().sendMessage(message: trackViewURL)
-            print("Facebook messenger: \(result)")
-        }
-    }
+//    @IBAction func onFacebookMessengerPressed(_ sender: UIButton) {
+//        
+//        if let musicItem = musicItem,
+//           let trackViewURL = musicItem.trackViewUrl {
+//            let result = EAFacebookManager.shared().sendMessage(message: trackViewURL)
+//            print("Facebook messenger: \(result)")
+//        }
+//    }
     
     @IBAction func onWhatsAppPressed(_ sender: UIButton) {
         

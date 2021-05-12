@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+class RootRouter: Router {
+    
+    func presentMusicItemsScreen(in window: UIWindow) {
+        
+        window.makeKeyAndVisible()
+        window.rootViewController = MusicItemsRouter.assembleModule()
+    }
+}
+
 // The router is responsible for the navigation between modules.
 class MusicItemsRouter: NSObject, MusicItemsRouterInput {
     

@@ -16,13 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Setup Google sign-in
-        EAGoogleManager.shared().setUp(clientId: "345201772061-1ftfls6kd0smtd2s8rvleo3teh917uvm.apps.googleusercontent.com")
+//        EAGoogleManager.shared().setUp(clientId: "345201772061-1ftfls6kd0smtd2s8rvleo3teh917uvm.apps.googleusercontent.com")
         
         // Segup Facebook sign-in
-        let _ = EAFacebookManager.shared().setUp(application, didFinishLaunchingWithOptions: launchOptions)
+//        let _ = EAFacebookManager.shared().setUp(application, didFinishLaunchingWithOptions: launchOptions)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        RootRouter().presentLoginScreen(in: self.window!)
+        RootRouter().presentMusicItemsScreen(in: self.window!)
         
         return true
     }
@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
             // Return one or another depending on the url
-            
-            return EAGoogleManager.shared().applicationOpenUrl(open: url)
-            //return EAFacebookManager.shared().applicationOpenUrl(app, open: url, options: options)
+
+            //return EAGoogleManager.shared().applicationOpenUrl(open: url)
+        return true
     }
     
     
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// let Facebook know when a user has launched your app.
         /// This is useful if you plan to advertise your app through Facebook
         /// or if you want to use their analytics to track your app’s metrics.
-        EAFacebookManager.shared().activateAppEvents()
+        //EAFacebookManager.shared().activateAppEvents()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

@@ -7,11 +7,11 @@ target 'MusicNetwork' do
 
   # Pods for MusicNetwork
   # Facebook
-  pod 'FacebookCore', '~> 0.9.0'
-  pod 'FacebookLogin', '~> 0.9.0'
-  pod 'FacebookShare', '~> 0.9.0'
+#  pod 'FacebookCore', '~> 0.9.0'
+#  pod 'FacebookLogin', '~> 0.9.0'
+#  pod 'FacebookShare', '~> 0.9.0'
   # Google
-  pod 'GoogleSignIn'
+i#  pod 'GoogleSignIn'
 
 
   target 'MusicNetworkTests' do
