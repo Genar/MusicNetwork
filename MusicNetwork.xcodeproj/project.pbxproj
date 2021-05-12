@@ -321,8 +321,6 @@
 		EDC1BFC5232676E7004E4A94 = {
 			isa = PBXGroup;
 			children = (
-				EDE0B05025AF402B00DEA88A /* Utils */,
-				ED5AE602252E381500B9F61B /* Localizable.strings */,
 				EDC1BFD0232676E7004E4A94 /* MusicNetwork */,
 				EDC1BFE5232676E9004E4A94 /* MusicNetworkTests */,
 				EDC1BFF0232676E9004E4A94 /* MusicNetworkUITests */,
@@ -344,13 +342,14 @@
 		EDC1BFD0232676E7004E4A94 /* MusicNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				EDE0B05025AF402B00DEA88A /* Utils */,
+				EDCDFCA7264C271200B3DB6E /* Resoures */,
 				EDB9613F232ABA130055E502 /* Services */,
 				EDA76CD02327BED100FC8307 /* Managers */,
 				EDC1C0172326B11F004E4A94 /* Modules */,
 				EDC1C00D2326A344004E4A94 /* Extensions */,
 				EDC1BFD1232676E7004E4A94 /* AppDelegate.swift */,
 				EDC1BFD5232676E7004E4A94 /* Main.storyboard */,
-				EDC1BFD8232676E9004E4A94 /* Assets.xcassets */,
 				EDC1BFDA232676E9004E4A94 /* LaunchScreen.storyboard */,
 				EDC1BFDD232676E9004E4A94 /* Info.plist */,
 			);
@@ -467,6 +466,15 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		EDCDFCA7264C271200B3DB6E /* Resoures */ = {
+			isa = PBXGroup;
+			children = (
+				EDC1BFD8232676E9004E4A94 /* Assets.xcassets */,
+				ED5AE602252E381500B9F61B /* Localizable.strings */,
+			);
+			path = Resoures;
+			sourceTree = "<group>";
+		};
 		EDE0B05025AF402B00DEA88A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,7 +484,8 @@
 				ED503AD025AF68A700622EF6 /* NetworkImageOperation.swift */,
 				ED8090F525B1FB3100C53995 /* ImageDataProvider.swift */,
 			);
-			path = Utils;
+			name = Utils;
+			path = ../Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
