@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 // Protocol that defines the view input methods.
-protocol MusicItemsViewInterface : class {
+protocol MusicItemsViewInterface : AnyObject {
     
     func showMusicItems(for musicItems: [MusicItem])
 }
 
-protocol MusicItemsPresenterInterface : class {
+protocol MusicItemsPresenterInterface : AnyObject {
     
     var router: MusicItemsRouter? { get set }
     var interactor: MusicItemsInteractorInput? { get set }
@@ -28,7 +28,7 @@ protocol MusicItemsPresenterInterface : class {
 }
 
 // Protocol that defines the interactor's use case.
-protocol MusicItemsInteractorInput: class {
+protocol MusicItemsInteractorInput: AnyObject {
     
     var output: MusicItemsInteractorOutput? { get set }
     
@@ -41,12 +41,12 @@ protocol MusicItemsInteractorInput: class {
 }
 
 // Protocol that defines the commands sent from the interactor to the presenter.
-protocol MusicItemsInteractorOutput : class {
+protocol MusicItemsInteractorOutput : AnyObject {
     
     func musicItemsDidFetch(musicItems:[MusicItem])
 }
 
-protocol MusicItemsRouterInput : class {
+protocol MusicItemsRouterInput : AnyObject {
     
     // Protocol that defines the possible routes from the MusicItems module.
     var viewController : UIViewController? { get set }
@@ -55,7 +55,7 @@ protocol MusicItemsRouterInput : class {
     static func assembleModule() -> UIViewController
 }
 
-protocol Router: class {
+protocol Router: AnyObject {
 
     func presentMusicItemsScreen(in window:UIWindow)
 }

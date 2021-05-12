@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol KeepIndexDelegate: class {
+protocol KeepIndexDelegate: AnyObject {
     
     func updateIndex(index: IndexPath?)
 }
