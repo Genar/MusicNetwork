@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED149966264C598000CD1394 /* Array+UrlElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED149965264C598000CD1394 /* Array+UrlElement.swift */; };
+		ED149967264C598000CD1394 /* Array+UrlElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED149965264C598000CD1394 /* Array+UrlElement.swift */; };
 		ED3B61E3232FE4DD008DE713 /* OpenUrl+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E2232FE4DD008DE713 /* OpenUrl+String.swift */; };
 		ED3B61E8232FE8FF008DE713 /* EAWhatsAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */; };
 		ED3B61EA232FECE6008DE713 /* EAMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */; };
 		ED3B61EC232FEDB8008DE713 /* EALineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61EB232FEDB8008DE713 /* EALineManager.swift */; };
+		ED3C79A2264C424B00B14EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC1BFD5232676E7004E4A94 /* Main.storyboard */; };
 		ED503AC325AF4CEC00622EF6 /* TiltShiftOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED503AC225AF4CEC00622EF6 /* TiltShiftOperation.swift */; };
 		ED503ACC25AF66D900622EF6 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED503ACB25AF66D900622EF6 /* AsyncOperation.swift */; };
 		ED503AD125AF68A700622EF6 /* NetworkImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED503AD025AF68A700622EF6 /* NetworkImageOperation.swift */; };
@@ -43,6 +46,18 @@
 		EDC1C0162326A8DE004E4A94 /* MusicItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0152326A8DE004E4A94 /* MusicItemsPresenter.swift */; };
 		EDC1C0192326B89E004E4A94 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C0182326B89E004E4A94 /* SearchResponse.swift */; };
 		EDC8596425AF40BB00D62904 /* TiltShiftFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8596325AF40BB00D62904 /* TiltShiftFilter.swift */; };
+		EDCDFCAF264C2A0C00B3DB6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCDFCAE264C2A0C00B3DB6E /* AppDelegate.swift */; };
+		EDCDFCB1264C2A0C00B3DB6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCDFCB0264C2A0C00B3DB6E /* SceneDelegate.swift */; };
+		EDCDFCB8264C2A1300B3DB6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCDFCB7264C2A1300B3DB6E /* Assets.xcassets */; };
+		EDCDFCBB264C2A1300B3DB6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCDFCB9264C2A1300B3DB6E /* LaunchScreen.storyboard */; };
+		EDCDFCC0264C2A1300B3DB6E /* MusicNetworkClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = EDCDFCAC264C2A0C00B3DB6E /* MusicNetworkClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EDCDFCC5264C389A00B3DB6E /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CCB2327A9A400FC8307 /* MusicDetailViewController.swift */; };
+		EDCDFCC6264C38B800B3DB6E /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C00823268EF5004E4A94 /* MusicItem.swift */; };
+		EDCDFCC7264C38DE00B3DB6E /* EAMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */; };
+		EDCDFCC8264C38E300B3DB6E /* EAWhatsAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */; };
+		EDCDFCC9264C38E700B3DB6E /* EALineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61EB232FEDB8008DE713 /* EALineManager.swift */; };
+		EDCDFCCA264C391A00B3DB6E /* OpenUrl+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B61E2232FE4DD008DE713 /* OpenUrl+String.swift */; };
+		EDCDFCCB264C394C00B3DB6E /* EAImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CD12327BF2300FC8307 /* EAImageManager.swift */; };
 		EDD651D125A4C76E00F1D7D7 /* KeepIndexDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,9 +76,31 @@
 			remoteGlobalIDString = EDC1BFCD232676E7004E4A94;
 			remoteInfo = MusicNetwork;
 		};
+		EDCDFCBE264C2A1300B3DB6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDC1BFC6232676E7004E4A94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDCDFCAB264C2A0C00B3DB6E;
+			remoteInfo = MusicNetworkClip;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EDCDFCC4264C2A1300B3DB6E /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				EDCDFCC0264C2A1300B3DB6E /* MusicNetworkClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		ED149965264C598000CD1394 /* Array+UrlElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+UrlElement.swift"; sourceTree = "<group>"; };
 		ED3B61E2232FE4DD008DE713 /* OpenUrl+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenUrl+String.swift"; sourceTree = "<group>"; };
 		ED3B61E7232FE8FF008DE713 /* EAWhatsAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAWhatsAppManager.swift; sourceTree = "<group>"; };
 		ED3B61E9232FECE6008DE713 /* EAMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAMessageManager.swift; sourceTree = "<group>"; };
@@ -107,6 +144,13 @@
 		EDC1C0152326A8DE004E4A94 /* MusicItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemsPresenter.swift; sourceTree = "<group>"; };
 		EDC1C0182326B89E004E4A94 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		EDC8596325AF40BB00D62904 /* TiltShiftFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltShiftFilter.swift; sourceTree = "<group>"; };
+		EDCDFCAC264C2A0C00B3DB6E /* MusicNetworkClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicNetworkClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCDFCAE264C2A0C00B3DB6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDCDFCB0264C2A0C00B3DB6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDCDFCB7264C2A1300B3DB6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDCDFCBA264C2A1300B3DB6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDCDFCBC264C2A1300B3DB6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCDFCBD264C2A1300B3DB6E /* MusicNetworkClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicNetworkClip.entitlements; sourceTree = "<group>"; };
 		EDD651D025A4C76E00F1D7D7 /* KeepIndexDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepIndexDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +171,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EDC1BFEA232676E9004E4A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCDFCA9264C2A0C00B3DB6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,6 +375,7 @@
 				EDC1BFD0232676E7004E4A94 /* MusicNetwork */,
 				EDC1BFE5232676E9004E4A94 /* MusicNetworkTests */,
 				EDC1BFF0232676E9004E4A94 /* MusicNetworkUITests */,
+				EDCDFCAD264C2A0C00B3DB6E /* MusicNetworkClip */,
 				EDC1BFCF232676E7004E4A94 /* Products */,
 				EDA76CCD2327B89600FC8307 /* Frameworks */,
 			);
@@ -335,6 +387,7 @@
 				EDC1BFCE232676E7004E4A94 /* MusicNetwork.app */,
 				EDC1BFE2232676E9004E4A94 /* MusicNetworkTests.xctest */,
 				EDC1BFED232676E9004E4A94 /* MusicNetworkUITests.xctest */,
+				EDCDFCAC264C2A0C00B3DB6E /* MusicNetworkClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -444,6 +497,7 @@
 				EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */,
 				EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */,
 				ED5AE5DC252E358500B9F61B /* String+Localizable.swift */,
+				ED149965264C598000CD1394 /* Array+UrlElement.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,6 +529,19 @@
 			path = Resoures;
 			sourceTree = "<group>";
 		};
+		EDCDFCAD264C2A0C00B3DB6E /* MusicNetworkClip */ = {
+			isa = PBXGroup;
+			children = (
+				EDCDFCAE264C2A0C00B3DB6E /* AppDelegate.swift */,
+				EDCDFCB0264C2A0C00B3DB6E /* SceneDelegate.swift */,
+				EDCDFCB7264C2A1300B3DB6E /* Assets.xcassets */,
+				EDCDFCB9264C2A1300B3DB6E /* LaunchScreen.storyboard */,
+				EDCDFCBC264C2A1300B3DB6E /* Info.plist */,
+				EDCDFCBD264C2A1300B3DB6E /* MusicNetworkClip.entitlements */,
+			);
+			path = MusicNetworkClip;
+			sourceTree = "<group>";
+		};
 		EDE0B05025AF402B00DEA88A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,10 +565,12 @@
 				EDC1BFCA232676E7004E4A94 /* Sources */,
 				EDC1BFCB232676E7004E4A94 /* Frameworks */,
 				EDC1BFCC232676E7004E4A94 /* Resources */,
+				EDCDFCC4264C2A1300B3DB6E /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EDCDFCBF264C2A1300B3DB6E /* PBXTargetDependency */,
 			);
 			name = MusicNetwork;
 			productName = MusicNetwork;
@@ -544,13 +613,30 @@
 			productReference = EDC1BFED232676E9004E4A94 /* MusicNetworkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EDCDFCAB264C2A0C00B3DB6E /* MusicNetworkClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDCDFCC1264C2A1300B3DB6E /* Build configuration list for PBXNativeTarget "MusicNetworkClip" */;
+			buildPhases = (
+				EDCDFCA8264C2A0C00B3DB6E /* Sources */,
+				EDCDFCA9264C2A0C00B3DB6E /* Frameworks */,
+				EDCDFCAA264C2A0C00B3DB6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicNetworkClip;
+			productName = MusicNetworkClip;
+			productReference = EDCDFCAC264C2A0C00B3DB6E /* MusicNetworkClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EDC1BFC6232676E7004E4A94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Genar Codina Reverter";
 				TargetAttributes = {
@@ -564,6 +650,9 @@
 					EDC1BFEC232676E9004E4A94 = {
 						CreatedOnToolsVersion = 10.3;
 						TestTargetID = EDC1BFCD232676E7004E4A94;
+					};
+					EDCDFCAB264C2A0C00B3DB6E = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -584,6 +673,7 @@
 				EDC1BFCD232676E7004E4A94 /* MusicNetwork */,
 				EDC1BFE1232676E9004E4A94 /* MusicNetworkTests */,
 				EDC1BFEC232676E9004E4A94 /* MusicNetworkUITests */,
+				EDCDFCAB264C2A0C00B3DB6E /* MusicNetworkClip */,
 			);
 		};
 /* End PBXProject section */
@@ -615,6 +705,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDCDFCAA264C2A0C00B3DB6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDCDFCBB264C2A1300B3DB6E /* LaunchScreen.storyboard in Resources */,
+				EDCDFCB8264C2A1300B3DB6E /* Assets.xcassets in Resources */,
+				ED3C79A2264C424B00B14EEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -623,6 +723,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC1C0122326A5E2004E4A94 /* MusicItemsProtocols.swift in Sources */,
+				ED149966264C598000CD1394 /* Array+UrlElement.swift in Sources */,
 				ED503ACC25AF66D900622EF6 /* AsyncOperation.swift in Sources */,
 				ED8090F625B1FB3100C53995 /* ImageDataProvider.swift in Sources */,
 				EDC1BFD4232676E7004E4A94 /* MusicItemsViewController.swift in Sources */,
@@ -670,6 +771,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDCDFCA8264C2A0C00B3DB6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDCDFCC6264C38B800B3DB6E /* MusicItem.swift in Sources */,
+				EDCDFCC7264C38DE00B3DB6E /* EAMessageManager.swift in Sources */,
+				EDCDFCCA264C391A00B3DB6E /* OpenUrl+String.swift in Sources */,
+				EDCDFCC5264C389A00B3DB6E /* MusicDetailViewController.swift in Sources */,
+				ED149967264C598000CD1394 /* Array+UrlElement.swift in Sources */,
+				EDCDFCC8264C38E300B3DB6E /* EAWhatsAppManager.swift in Sources */,
+				EDCDFCAF264C2A0C00B3DB6E /* AppDelegate.swift in Sources */,
+				EDCDFCCB264C394C00B3DB6E /* EAImageManager.swift in Sources */,
+				EDCDFCB1264C2A0C00B3DB6E /* SceneDelegate.swift in Sources */,
+				EDCDFCC9264C38E700B3DB6E /* EALineManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -682,6 +800,11 @@
 			isa = PBXTargetDependency;
 			target = EDC1BFCD232676E7004E4A94 /* MusicNetwork */;
 			targetProxy = EDC1BFEE232676E9004E4A94 /* PBXContainerItemProxy */;
+		};
+		EDCDFCBF264C2A1300B3DB6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDCDFCAB264C2A0C00B3DB6E /* MusicNetworkClip */;
+			targetProxy = EDCDFCBE264C2A1300B3DB6E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -709,6 +832,14 @@
 			children = (
 				EDC1BFDB232676E9004E4A94 /* Base */,
 				ED5AE5F5252E374500B9F61B /* es */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EDCDFCB9264C2A1300B3DB6E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDCDFCBA264C2A1300B3DB6E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -841,6 +972,7 @@
 		EDC1BFF7232676E9004E4A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG8MX2KZLY;
@@ -859,6 +991,7 @@
 		EDC1BFF8232676E9004E4A94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG8MX2KZLY;
@@ -956,6 +1089,50 @@
 			};
 			name = Release;
 		};
+		EDCDFCC2264C2A1300B3DB6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MusicNetworkClip/MusicNetworkClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KG8MX2KZLY;
+				INFOPLIST_FILE = MusicNetworkClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.genar.MusicNetwork.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDCDFCC3264C2A1300B3DB6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MusicNetworkClip/MusicNetworkClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KG8MX2KZLY;
+				INFOPLIST_FILE = MusicNetworkClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.genar.MusicNetwork.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPCLIP;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -991,6 +1168,15 @@
 			buildConfigurations = (
 				EDC1BFFD232676E9004E4A94 /* Debug */,
 				EDC1BFFE232676E9004E4A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDCDFCC1264C2A1300B3DB6E /* Build configuration list for PBXNativeTarget "MusicNetworkClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDCDFCC2264C2A1300B3DB6E /* Debug */,
+				EDCDFCC3264C2A1300B3DB6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

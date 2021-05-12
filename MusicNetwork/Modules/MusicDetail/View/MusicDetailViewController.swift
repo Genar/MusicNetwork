@@ -24,12 +24,29 @@ class MusicDetailViewController: UIViewController {
     var musicItems: [MusicItem]?
     var musicItem: MusicItem?
     var indexPath: IndexPath?
+    
+    #if !APPCLIP
     var indexDelegate: KeepIndexDelegate?
+    #endif
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        #if APPCLIP
+        setupMusicItem()
+        #endif
+        
         setupMedia()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        #if APPCLIP
+        self.nextButton.isHidden = true
+        self.previousButton.isHidden = true
+        #endif
     }
     
     // MARK: - Actions
@@ -101,6 +118,7 @@ class MusicDetailViewController: UIViewController {
         }
     }
     
+    #if !APPCLIP
     @IBAction func onPreviousPressed(_ sender: UIButton) {
         
         if let indexPath = self.indexPath {
@@ -133,14 +151,22 @@ class MusicDetailViewController: UIViewController {
             }
         }
     }
+    #else
+    @IBAction func onPreviousPressed(_ sender: UIButton) {
+    }
+    @IBAction func onNextPressed(_ sender: UIButton) {
+    }
+    #endif
     
     
     // MARK: - Private
     
     private func setupMedia() {
 
+        #if !APPCLIP
         guard let idxPath = self.indexPath else { return }
         self.musicItem = self.musicItems?[idxPath.row]
+        #endif
         if let musicItem = self.musicItem {
             songLabel.text = musicItem.trackName
             artistLabel.text = musicItem.artistName
@@ -157,6 +183,11 @@ class MusicDetailViewController: UIViewController {
                 artistWebView.load(request)
             }
         }
+    }
+    
+    private func setupMusicItem() {
+        
+        self.musicItem = MusicItem(wrapperType: nil, kind: nil, artistId: nil, collectionId: nil, trackId: nil, artistName: "Toto, Steve Lukather, David Paich & Steve Porcaro", collectionName: nil, trackName: nil, collectionCensoredName: nil, trackCensoredName: nil, collectionArtistName: nil, artistViewUrl: nil, collectionViewUrl: nil, trackViewUrl: nil, previewUrl: "https://video-ssl.itunes.apple.com/itunes-assets/Video122/v4/49/0d/36/490d3640-d47e-fa45-635c-67d8853185f3/mzvf_5380544436584296202.640x476.h264lc.U.p.m4v", artworkUrl30: nil, artworkUrl60: nil, artworkUrl100: "https://is5-ssl.mzstatic.com/image/thumb/Video3/v4/ff/7f/87/ff7f87de-81d4-2d34-bcdb-30a0ef93439d/source/100x100bb.jpg", collectionPrice: nil, trackPrice: nil, trackRentalPrice: nil, collectionHdPrice: nil, trackHdPrice: nil, trackHdRentalPrice: nil, releaseDate: nil, collectionExplicitness: nil, trackExplicitness: nil, discCount: nil, discNumber: nil, trackCount: nil, trackNumber: nil, trackTimeMillis: nil, country: nil, primaryGenreName: nil, currency: nil, contentAdvisoryRating: nil, isStreamable: nil, hasITunesExtras: nil, longDescription: nil, collectionArtistViewUrl: nil, collectionArtistId: nil, shortDescription: nil, artistType: nil, artistLinkUrl: nil, amgArtistId: nil, primaryGenreId: nil, feedUrl: nil, artworkUrl600: nil, genreIds: nil, genres: nil, copyright: nil)
     }
     
     // MARK: - setupMedia with indexPath for cancellation (pag. 78)
