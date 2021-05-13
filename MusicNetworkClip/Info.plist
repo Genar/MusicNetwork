@@ -27,7 +27,7 @@
 		<key>NSAppClipRequestEphemeralUserNotification</key>
 		<true/>
 		<key>NSAppClipRequestLocationConfirmation</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -53,7 +53,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCAppClipURL"
-            value = "https://genar.org/clips?artist=toto%20poland"
+            value = "https://genar.org/clips?artist=Toto,%20Steve%20Lukather,%20David%20Paic%20and%20Steve%20Porcaro&amp;previewUrl=https://video-ssl.itunes.apple.com/itunes-assets/Video122/v4/49/0d/36/490d3640-d47e-fa45-635c-67d8853185f3/mzvf_5380544436584296202.640x476.h264lc.U.p.m4v&amp;artworkUrl100=https://is5-ssl.mzstatic.com/image/thumb/Video3/v4/ff/7f/87/ff7f87de-81d4-2d34-bcdb-30a0ef93439d/source/100x100bb.jpg&amp;latitude=41.8271&amp;longitude=1.8922"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

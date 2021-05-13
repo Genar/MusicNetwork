@@ -7,32 +7,29 @@
 //
 
 import UIKit
+import AppClip
+import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    ///
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options: UIScene.ConnectionOptions) {
         
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "MusicDetailViewController")
-        window?.rootViewController = viewController
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "MusicDetailViewController")
+        
+        if let userActivity = options.userActivities.filter({ $0.activityType == NSUserActivityTypeBrowsingWeb }).first {
+            handleActivity(userActivity, viewController: detailViewController)
+        }
+        
+        window?.rootViewController = detailViewController
         window?.makeKeyAndVisible()
-//            if let userActivity = options.userActivity {
-//                    scene(scene, continue: userActivity)
-//            }
     }
-
-
-//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-//        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-//        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-//        guard let _ = (scene as? UIWindowScene) else { return }
-//    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -61,7 +58,77 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    /// If the app or App Clip is suspended in memory and the user launches it, the system calls the following method
+    func scene(_ scene: UIScene, willContinueUserActivityWithType userActivityType: String) {
+        
+        if let userActivity = userActivity {
+            handleActivity(userActivity)
+        }
+    }
+    
+//    func handleActivity(_ userActivity: NSUserActivity, viewController: UIViewController? = nil) {
+//
+//        guard let url = userActivity.webpageURL else { return }
+//        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
+//        guard let queryItems = components.queryItems else { return }
+//        if let artist = queryItems.value(for: "artist"),
+//           let previewUrl = queryItems.value(for: "previewUrl"),
+//           let artworkUrl100 = queryItems.value(for: "artworkUrl100") {
+//            let musicItem = setupMusicItem(artistName: artist, previewUrl: previewUrl, artworkUrl100: artworkUrl100)
+//            if let viewController = viewController as? MusicDetailViewController {
+//                viewController.musicItem = musicItem
+//            }
+//        }
+//    }
+    
+    func handleActivity(_ userActivity: NSUserActivity, viewController: UIViewController? = nil) {
+        
+        guard let url = userActivity.webpageURL else { return }
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
+        guard let queryItems = components.queryItems else { return }
+        if let artist = queryItems.value(for: "artist"),
+           let previewUrl = queryItems.value(for: "previewUrl"),
+           let artworkUrl100 = queryItems.value(for: "artworkUrl100") {
+            let musicItem = setupMusicItem(artistName: artist, previewUrl: previewUrl, artworkUrl100: artworkUrl100)
+            if let viewController = viewController as? MusicDetailViewController {
+                
+                // Attempt to verify their location
+                guard let payload = userActivity.appClipActivationPayload,
+                      let lat = queryItems.value(for: "latitude"),
+                      let lon = queryItems.value(for: "longitude"),
+                      let latitude = Double(lat), let longitude = Double(lon) else {
+                    return
+                }
 
+                let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 100, identifier: "location")
 
+                payload.confirmAcquired(in: region) { inRegion, error in
+                    if let error = error as? APActivationPayloadError {
+                        if error.code == APActivationPayloadError.disallowed {
+                            print("---Not launched via QR code")
+                            // We are using the example URL in the Run of the MusicNetworkClip scheme
+                            // so we set the music item here; however for a real app we have to remove
+                            // the following line.
+                            viewController.musicItem = musicItem
+                        } else if error.code == APActivationPayloadError.doesNotMatch {
+                            print("---Region does not match location")
+                        } else {
+                            print("---\(error.localizedDescription)")
+                        }
+                    } else {
+                        // location confirmed – set music item
+                        viewController.musicItem = musicItem
+                    }
+                }
+            }
+        }
+    }
+    
+    private func setupMusicItem(artistName: String, previewUrl: String, artworkUrl100: String) -> MusicItem {
+        
+        let musicItem = MusicItem(wrapperType: nil, kind: nil, artistId: nil, collectionId: nil, trackId: nil, artistName: artistName, collectionName: nil, trackName: nil, collectionCensoredName: nil, trackCensoredName: nil, collectionArtistName: nil, artistViewUrl: nil, collectionViewUrl: nil, trackViewUrl: nil, previewUrl: previewUrl, artworkUrl30: nil, artworkUrl60: nil, artworkUrl100: artworkUrl100, collectionPrice: nil, trackPrice: nil, trackRentalPrice: nil, collectionHdPrice: nil, trackHdPrice: nil, trackHdRentalPrice: nil, releaseDate: nil, collectionExplicitness: nil, trackExplicitness: nil, discCount: nil, discNumber: nil, trackCount: nil, trackNumber: nil, trackTimeMillis: nil, country: nil, primaryGenreName: nil, currency: nil, contentAdvisoryRating: nil, isStreamable: nil, hasITunesExtras: nil, longDescription: nil, collectionArtistViewUrl: nil, collectionArtistId: nil, shortDescription: nil, artistType: nil, artistLinkUrl: nil, amgArtistId: nil, primaryGenreId: nil, feedUrl: nil, artworkUrl600: nil, genreIds: nil, genres: nil, copyright: nil)
+        
+        return musicItem
+    }
 }
-
