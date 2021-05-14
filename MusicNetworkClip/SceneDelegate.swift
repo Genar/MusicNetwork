@@ -110,7 +110,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                             // We are using the example URL in the Run of the MusicNetworkClip scheme
                             // so we set the music item here; however for a real app we have to remove
                             // the following line.
-                            viewController.musicItem = musicItem
+                            DispatchQueue.main.async {
+                                viewController.musicItem = musicItem
+                                viewController.setupMedia()
+                            }
                         } else if error.code == APActivationPayloadError.doesNotMatch {
                             print("---Region does not match location")
                         } else {
@@ -118,7 +121,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         }
                     } else {
                         // location confirmed – set music item
-                        viewController.musicItem = musicItem
+                        DispatchQueue.main.async {
+                            viewController.musicItem = musicItem
+                            viewController.setupMedia()
+                        }
                     }
                 }
             }

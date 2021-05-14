@@ -8,8 +8,10 @@
 
 import UIKit
 import WebKit
+import UserNotifications
+import StoreKit
 
-class MusicDetailViewController: UIViewController {
+class MusicDetailViewController: UIViewController, SKOverlayDelegate {
     
     @IBOutlet weak var artistImageView: UIImageView!
     @IBOutlet weak var songLabel: UILabel!
@@ -20,6 +22,7 @@ class MusicDetailViewController: UIViewController {
     @IBOutlet weak var artistWebView: WKWebView!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var remindMeButton: UIButton!
     
     var musicItems: [MusicItem]?
     var musicItem: MusicItem?
@@ -28,12 +31,15 @@ class MusicDetailViewController: UIViewController {
     #if !APPCLIP
     var indexDelegate: KeepIndexDelegate?
     #endif
+    
+    let userNotificationCenter = UNUserNotificationCenter.current()
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        #if !APPCLIP
         setupMedia()
+        #endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,50 +48,12 @@ class MusicDetailViewController: UIViewController {
         #if APPCLIP
         self.nextButton.isHidden = true
         self.previousButton.isHidden = true
+        #else
+        self.remindMeButton.isHidden = true
         #endif
     }
     
     // MARK: - Actions
-    
-//    @IBAction func onInstagramPressed(_ sender: UIButton) {
-//        
-//        var isPosted = false
-//        if  let artistImage = artistImageView.image,
-//            let previewUrl = musicItem?.previewUrl,
-//            let backgroundImgData = UIImage(named: "User")!.jpegData(compressionQuality: 1.0),
-//            let stickerImgData = artistImage.pngData(),
-//            let musicItem = self.musicItem {
-//            if let trackTimeMillis = musicItem.trackTimeMillis {
-//                let durationInSeconds: Int = trackTimeMillis / 1000
-//                let durationInMinutes: Int = durationInSeconds / 60
-//                if durationInMinutes <= 4 {
-//                    isPosted = EAInstagramManager.shared().shareStory(backgroundImageData: backgroundImgData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
-//                } else if durationInMinutes > 5 && durationInMinutes <= 10 {
-//                    isPosted = EAInstagramManager.shared().shareStory(backgroundTopColor: "#33FF33", backgroundBottomColor: "#FF00FF", stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
-//                } else {
-//                    do {
-//                        if let previewURL = musicItem.previewUrl,
-//                           let videoURL = NSURL(string: previewURL) {
-//                            let videoData = try Data(contentsOf: videoURL as URL)
-//                                isPosted = EAInstagramManager.shared().shareStory(backgroundVideoData: videoData, stickerImageData: stickerImgData, attributionURL: previewUrl, expirationIntervalInSeconds: 300)
-//                        }
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
-//                }
-//            }
-//        }
-//        print("Is posted in Instagram? \(isPosted)")
-//    }
-    
-//    @IBAction func onFacebookMessengerPressed(_ sender: UIButton) {
-//        
-//        if let musicItem = musicItem,
-//           let trackViewURL = musicItem.trackViewUrl {
-//            let result = EAFacebookManager.shared().sendMessage(message: trackViewURL)
-//            print("Facebook messenger: \(result)")
-//        }
-//    }
     
     @IBAction func onWhatsAppPressed(_ sender: UIButton) {
         
@@ -147,17 +115,36 @@ class MusicDetailViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func onRemindMePressed(_ sender: UIButton) {
+    }
     #else
     @IBAction func onPreviousPressed(_ sender: UIButton) {
     }
     @IBAction func onNextPressed(_ sender: UIButton) {
+    }
+    @IBAction func onRemindMePressed(_ sender: UIButton) {
+        
+        userNotificationCenter.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized || settings.authorizationStatus == .ephemeral {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    self.sendNotification()
+                }
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.showGetFullAppBanner()
+        }
+        
     }
     #endif
     
     
     // MARK: - Private
     
-    private func setupMedia() {
+    public func setupMedia() {
 
         #if !APPCLIP
         guard let idxPath = self.indexPath else { return }
@@ -181,8 +168,34 @@ class MusicDetailViewController: UIViewController {
         }
     }
     
+    private func sendNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Music Network"
+        content.subtitle = "Remember to download the full app"
+        content.sound = UNNotificationSound.default
+
+        // show this notification five seconds from now
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+        // choose a random identifier
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        // add our notification request
+        userNotificationCenter.add(request)
+    }
+    
+    private func showGetFullAppBanner() {
+        
+        guard let scene = view.window?.windowScene else { return }
+        let config = SKOverlay.AppClipConfiguration(position: .bottom)
+        let overlay = SKOverlay(configuration: config)
+        overlay.delegate = self
+        overlay.present(in: scene)
+    }
+    
     // MARK: - setupMedia with indexPath for cancellation (pag. 78)
-//    private func setupMedia() {
+//    public func setupMedia() {
 //
 //        guard let idxPath = self.indexPath else { return }
 //        self.musicItem = self.musicItems?[idxPath.row]

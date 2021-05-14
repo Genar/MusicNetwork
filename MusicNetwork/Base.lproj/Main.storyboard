@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -324,6 +323,13 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJI-Va-bpK">
+                                                <rect key="frame" x="102" y="580" width="170" height="30"/>
+                                                <state key="normal" title="Remind me!"/>
+                                                <connections>
+                                                    <action selector="onRemindMePressed:" destination="ymi-mV-gwK" eventType="touchUpInside" id="d65-7f-6Cj"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -334,11 +340,14 @@
                                             <constraint firstItem="M8b-FR-zUN" firstAttribute="leading" secondItem="fDK-Rp-Jn2" secondAttribute="leading" constant="20" symbolic="YES" id="DOP-Z8-8Lv"/>
                                             <constraint firstItem="SRW-g2-byA" firstAttribute="trailing" secondItem="Rbv-Hh-Gyu" secondAttribute="trailing" id="DYA-ks-Vcj"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D2h-tY-fmH" secondAttribute="trailing" constant="20" symbolic="YES" id="Gfs-cn-mTd"/>
+                                            <constraint firstItem="jJI-Va-bpK" firstAttribute="leading" secondItem="jg6-PA-UI9" secondAttribute="leading" id="H1m-NH-XAq"/>
                                             <constraint firstItem="Zh5-bq-8xg" firstAttribute="centerY" secondItem="D2h-tY-fmH" secondAttribute="centerY" id="I6S-T1-3sc"/>
                                             <constraint firstItem="Htr-bW-15n" firstAttribute="top" secondItem="D2h-tY-fmH" secondAttribute="bottom" constant="8" id="J5s-GV-H8f"/>
                                             <constraint firstItem="Rbv-Hh-Gyu" firstAttribute="top" secondItem="IA9-Yq-7Ey" secondAttribute="bottom" constant="20" id="LN4-zU-zBK"/>
+                                            <constraint firstItem="jJI-Va-bpK" firstAttribute="centerX" secondItem="fDK-Rp-Jn2" secondAttribute="centerX" id="NhO-wP-ucd"/>
                                             <constraint firstItem="NFX-qc-ohc" firstAttribute="trailing" secondItem="SRW-g2-byA" secondAttribute="trailing" id="NkU-8A-psT"/>
                                             <constraint firstItem="NFX-qc-ohc" firstAttribute="leading" secondItem="SRW-g2-byA" secondAttribute="leading" id="Oa8-gS-DJo"/>
+                                            <constraint firstItem="jJI-Va-bpK" firstAttribute="trailing" secondItem="jg6-PA-UI9" secondAttribute="trailing" id="Om1-SL-W06"/>
                                             <constraint firstItem="PyI-uZ-bAL" firstAttribute="centerX" secondItem="fDK-Rp-Jn2" secondAttribute="centerX" id="SGn-IQ-mJE"/>
                                             <constraint firstItem="Rbv-Hh-Gyu" firstAttribute="leading" secondItem="IA9-Yq-7Ey" secondAttribute="leading" id="Smu-9S-fTP"/>
                                             <constraint firstItem="Zh5-bq-8xg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D2h-tY-fmH" secondAttribute="trailing" constant="8" symbolic="YES" id="VIS-6z-TDP"/>
@@ -346,6 +355,7 @@
                                             <constraint firstItem="NFX-qc-ohc" firstAttribute="top" secondItem="SRW-g2-byA" secondAttribute="bottom" constant="15.666666666666686" id="bSp-HV-XqU"/>
                                             <constraint firstItem="D2h-tY-fmH" firstAttribute="centerY" secondItem="fDK-Rp-Jn2" secondAttribute="centerY" id="cLZ-y7-q30"/>
                                             <constraint firstItem="M8b-FR-zUN" firstAttribute="centerX" secondItem="fDK-Rp-Jn2" secondAttribute="centerX" id="ce8-0p-ABY"/>
+                                            <constraint firstItem="jJI-Va-bpK" firstAttribute="top" secondItem="jg6-PA-UI9" secondAttribute="bottom" constant="27.333333333333371" id="daD-Qr-TvW"/>
                                             <constraint firstItem="jg6-PA-UI9" firstAttribute="top" secondItem="Htr-bW-15n" secondAttribute="bottom" constant="31.666666666666686" id="dss-id-2El"/>
                                             <constraint firstItem="Htr-bW-15n" firstAttribute="leading" secondItem="NFX-qc-ohc" secondAttribute="leading" id="ecb-mp-OI6"/>
                                             <constraint firstItem="Rbv-Hh-Gyu" firstAttribute="trailing" secondItem="IA9-Yq-7Ey" secondAttribute="trailing" id="fgo-Xi-yWM"/>
@@ -390,12 +400,13 @@
                         <outlet property="genreLabel" destination="NFX-qc-ohc" id="uhD-VS-g7u"/>
                         <outlet property="nextButton" destination="Zh5-bq-8xg" id="3Fa-6g-up8"/>
                         <outlet property="previousButton" destination="D2h-tY-fmH" id="Dry-bz-yoV"/>
+                        <outlet property="remindMeButton" destination="jJI-Va-bpK" id="m3R-re-6sc"/>
                         <outlet property="songLabel" destination="M8b-FR-zUN" id="GOB-jC-2Kn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNQ-Sq-F1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3519" y="139"/>
+            <point key="canvasLocation" x="3518.840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>
