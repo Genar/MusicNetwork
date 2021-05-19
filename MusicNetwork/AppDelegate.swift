@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,11 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Setup Google sign-in
-//        EAGoogleManager.shared().setUp(clientId: "345201772061-1ftfls6kd0smtd2s8rvleo3teh917uvm.apps.googleusercontent.com")
-        
-        // Segup Facebook sign-in
-//        let _ = EAFacebookManager.shared().setUp(application, didFinishLaunchingWithOptions: launchOptions)
+        FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         RootRouter().presentMusicItemsScreen(in: self.window!)

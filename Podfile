@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-  platform :ios, '10.0'
+  platform :ios, '14.1'
 
 target 'MusicNetwork' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,11 +7,9 @@ target 'MusicNetwork' do
 
   # Pods for MusicNetwork
   # Facebook
-#  pod 'FacebookCore', '~> 0.9.0'
-#  pod 'FacebookLogin', '~> 0.9.0'
-#  pod 'FacebookShare', '~> 0.9.0'
   # Google
-i#  pod 'GoogleSignIn'
+#  pod 'GoogleSignIn'
+  pod 'Firebase/Analytics'
 
 
   target 'MusicNetworkTests' do
