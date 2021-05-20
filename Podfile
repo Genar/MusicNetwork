@@ -9,7 +9,6 @@ target 'MusicNetwork' do
   # Facebook
   # Google
 #  pod 'GoogleSignIn'
-  pod 'Firebase/Analytics'
 
 
   target 'MusicNetworkTests' do

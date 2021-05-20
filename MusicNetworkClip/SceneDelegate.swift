@@ -67,31 +67,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-//    func handleActivity(_ userActivity: NSUserActivity, viewController: UIViewController? = nil) {
-//
-//        guard let url = userActivity.webpageURL else { return }
-//        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
-//        guard let queryItems = components.queryItems else { return }
-//        if let artist = queryItems.value(for: "artist"),
-//           let previewUrl = queryItems.value(for: "previewUrl"),
-//           let artworkUrl100 = queryItems.value(for: "artworkUrl100") {
-//            let musicItem = setupMusicItem(artistName: artist, previewUrl: previewUrl, artworkUrl100: artworkUrl100)
-//            if let viewController = viewController as? MusicDetailViewController {
-//                viewController.musicItem = musicItem
-//            }
-//        }
-//    }
-    
     func handleUserActivity(_ userActivity: NSUserActivity, viewController: UIViewController? = nil) {
-        
+
         guard let url = userActivity.webpageURL else { return }
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
         guard let queryItems = components.queryItems else { return }
-        if let artist = queryItems.value(for: "artist"),
-           let previewUrl = queryItems.value(for: "previewUrl"),
-           let artworkUrl100 = queryItems.value(for: "artworkUrl100") {
-            let musicItem = setupMusicItem(artistName: artist, previewUrl: previewUrl, artworkUrl100: artworkUrl100)
-            
+        if let artistIdx = queryItems.value(for: "artistindex") {
+            var artistIndex = Int(artistIdx) ?? 0
+            if artistIndex > 1 { artistIndex = 0 }
+            let musicItem = getHardCodeMusicItem()[artistIndex]
             // Attempt to verify location from the URL payload
             guard let payload = userActivity.appClipActivationPayload,
                   let lat = queryItems.value(for: "latitude"),
@@ -99,15 +83,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                   let latitude = Double(lat), let longitude = Double(lon) else {
                 return
             }
-            
+
             let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 100, identifier: "location")
-            
+
             payload.confirmAcquired(in: region) { inRegion, error in
-                
+
                 self.handleLocationConfirmationResult(inRegion: inRegion, error: error, viewController: viewController, musicItem: musicItem)
             }
         }
     }
+    
+    // MARK: - Private
     
     private func handleLocationConfirmationResult(inRegion: Bool, error: Error?, viewController: UIViewController?, musicItem: MusicItem) {
         
@@ -146,9 +132,55 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    private func setupMusicItem(artistName: String, previewUrl: String, artworkUrl100: String) -> MusicItem {
+    private func getHardCodeMusicItem() -> [MusicItem] {
         
-        let musicItem = MusicItem(wrapperType: nil, kind: nil, artistId: nil, collectionId: nil, trackId: nil, artistName: artistName, collectionName: nil, trackName: nil, collectionCensoredName: nil, trackCensoredName: nil, collectionArtistName: nil, artistViewUrl: nil, collectionViewUrl: nil, trackViewUrl: nil, previewUrl: previewUrl, artworkUrl30: nil, artworkUrl60: nil, artworkUrl100: artworkUrl100, collectionPrice: nil, trackPrice: nil, trackRentalPrice: nil, collectionHdPrice: nil, trackHdPrice: nil, trackHdRentalPrice: nil, releaseDate: nil, collectionExplicitness: nil, trackExplicitness: nil, discCount: nil, discNumber: nil, trackCount: nil, trackNumber: nil, trackTimeMillis: nil, country: nil, primaryGenreName: nil, currency: nil, contentAdvisoryRating: nil, isStreamable: nil, hasITunesExtras: nil, longDescription: nil, collectionArtistViewUrl: nil, collectionArtistId: nil, shortDescription: nil, artistType: nil, artistLinkUrl: nil, amgArtistId: nil, primaryGenreId: nil, feedUrl: nil, artworkUrl600: nil, genreIds: nil, genres: nil, copyright: nil)
+        let firstArtist = "artist=Toto, Steve Lukather, David Paic and Steve%20Porcaro"
+        let firstTrackName = "Hold the line"
+        let firstCollectionName = "Poland live"
+        let firstReleaseDate = "2010"
+        let firstPreviewUrl = "https://video-ssl.itunes.apple.com/itunes-assets/Video122/v4/49/0d/36/490d3640-d47e-fa45-635c-67d8853185f3/mzvf_5380544436584296202.640x476.h264lc.U.p.m4v"
+        let firstArtworkUrl100 = "https://is5-ssl.mzstatic.com/image/thumb/Video3/v4/ff/7f/87/ff7f87de-81d4-2d34-bcdb-30a0ef93439d/source/100x100bb.jpg"
+        let firstTrackViewUrl = "https://itunes.apple.com/us/movie/toto-35th-anniversary-tour-live-in-poland/id853512405?uo=4"
+        let firstMusicItem = setupMusicItem(artistName: firstArtist,
+                                            trackName: firstTrackName,
+                                            collectionName: firstCollectionName,
+                                            releaseDate: firstReleaseDate,
+                                            primaryGenreName: "Rock",
+                                            previewUrl: firstPreviewUrl,
+                                            artworkUrl100: firstArtworkUrl100,
+                                            trackViewUrl: firstTrackViewUrl)
+        
+        let secondArtist = "Michael Jackson"
+        let secondTrackName = "Remember the Time"
+        let secondCollectionName = "Michael Jackson's Vision (Music Video Collection)"
+        let secondReleaseDate = "Jan 14, 1992"
+        let secondPreviewUrl = "https://video-ssl.itunes.apple.com/itunes-assets/Video124/v4/47/c9/75/47c975a0-00c9-8f12-f303-955a02e6aec9/mzvf_14580757575164842771.640x360.h264lc.U.p.m4v"
+        let secondArtworkUrl100 = "https://is1-ssl.mzstatic.com/image/thumb/Video118/v4/48/c0/87/48c08774-665b-e907-b1fe-401d4b4de63b/source/100x100bb.jpg"
+        let secondTrackViewUrl = "https://music.apple.com/us/music-video/remember-the-time-michael-jacksons-vision/405410829?uo=4"
+        let secondMusicItem = setupMusicItem(artistName: secondArtist,
+                                             trackName: secondTrackName,
+                                             collectionName: secondCollectionName,
+                                             releaseDate: secondReleaseDate,
+                                             primaryGenreName: "Pop",
+                                             previewUrl: secondPreviewUrl,
+                                             artworkUrl100: secondArtworkUrl100,
+                                             trackViewUrl: secondTrackViewUrl)
+        
+        let musicItems: [MusicItem] = [firstMusicItem, secondMusicItem]
+        
+        return musicItems
+    }
+    
+    private func setupMusicItem(artistName: String,
+                                trackName: String,
+                                collectionName: String,
+                                releaseDate: String,
+                                primaryGenreName: String,
+                                previewUrl: String,
+                                artworkUrl100: String,
+                                trackViewUrl: String) -> MusicItem {
+        
+        let musicItem = MusicItem(wrapperType: nil, kind: nil, artistId: nil, collectionId: nil, trackId: nil, artistName: artistName, collectionName: collectionName, trackName: trackName, collectionCensoredName: nil, trackCensoredName: nil, collectionArtistName: nil, artistViewUrl: nil, collectionViewUrl: nil, trackViewUrl: trackViewUrl, previewUrl: previewUrl, artworkUrl30: nil, artworkUrl60: nil, artworkUrl100: artworkUrl100, collectionPrice: nil, trackPrice: nil, trackRentalPrice: nil, collectionHdPrice: nil, trackHdPrice: nil, trackHdRentalPrice: nil, releaseDate: releaseDate, collectionExplicitness: nil, trackExplicitness: nil, discCount: nil, discNumber: nil, trackCount: nil, trackNumber: nil, trackTimeMillis: nil, country: nil, primaryGenreName: primaryGenreName, currency: nil, contentAdvisoryRating: nil, isStreamable: nil, hasITunesExtras: nil, longDescription: nil, collectionArtistViewUrl: nil, collectionArtistId: nil, shortDescription: nil, artistType: nil, artistLinkUrl: nil, amgArtistId: nil, primaryGenreId: nil, feedUrl: nil, artworkUrl600: nil, genreIds: nil, genres: nil, copyright: nil)
         
         return musicItem
     }
