@@ -25,6 +25,7 @@
 		ED5AE5FF252E381500B9F61B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED5AE602252E381500B9F61B /* Localizable.strings */; };
 		ED5AE600252E381500B9F61B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED5AE602252E381500B9F61B /* Localizable.strings */; };
 		ED8090F625B1FB3100C53995 /* ImageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8090F525B1FB3100C53995 /* ImageDataProvider.swift */; };
+		ED9071C526569A04004B6188 /* Sallent.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ED9071C426569A04004B6188 /* Sallent.gpx */; };
 		EDA76CC1232785B800FC8307 /* Date+CustomFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */; };
 		EDA76CC3232794AF00FC8307 /* Decimal+StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */; };
 		EDA76CCC2327A9A400FC8307 /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA76CCB2327A9A400FC8307 /* MusicDetailViewController.swift */; };
@@ -127,6 +128,7 @@
 		ED5AE601252E381500B9F61B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED5AE603252E381900B9F61B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED8090F525B1FB3100C53995 /* ImageDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataProvider.swift; sourceTree = "<group>"; };
+		ED9071C426569A04004B6188 /* Sallent.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Sallent.gpx; sourceTree = "<group>"; };
 		EDA76CC0232785B800FC8307 /* Date+CustomFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CustomFormatter.swift"; sourceTree = "<group>"; };
 		EDA76CC2232794AF00FC8307 /* Decimal+StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+StringFormatter.swift"; sourceTree = "<group>"; };
 		EDA76CCB2327A9A400FC8307 /* MusicDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDetailViewController.swift; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 				EDCDFCB9264C2A1300B3DB6E /* LaunchScreen.storyboard */,
 				EDCDFCBC264C2A1300B3DB6E /* Info.plist */,
 				EDCDFCBD264C2A1300B3DB6E /* MusicNetworkClip.entitlements */,
+				ED9071C426569A04004B6188 /* Sallent.gpx */,
 			);
 			path = MusicNetworkClip;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				EDCDFCBB264C2A1300B3DB6E /* LaunchScreen.storyboard in Resources */,
 				EDCDFCB8264C2A1300B3DB6E /* Assets.xcassets in Resources */,
 				ED3C79A2264C424B00B14EEC /* Main.storyboard in Resources */,
+				ED9071C526569A04004B6188 /* Sallent.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

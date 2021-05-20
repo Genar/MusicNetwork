@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let detailViewController = storyboard.instantiateViewController(withIdentifier: "MusicDetailViewController")
         
         if let userActivity = options.userActivities.filter({ $0.activityType == NSUserActivityTypeBrowsingWeb }).first {
-            handleActivity(userActivity, viewController: detailViewController)
+            handleUserActivity(userActivity, viewController: detailViewController)
         }
         
         window?.rootViewController = detailViewController
@@ -63,7 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willContinueUserActivityWithType userActivityType: String) {
         
         if let userActivity = userActivity {
-            handleActivity(userActivity)
+            handleUserActivity(userActivity)
         }
     }
     
@@ -82,7 +82,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        }
 //    }
     
-    func handleActivity(_ userActivity: NSUserActivity, viewController: UIViewController? = nil) {
+    func handleUserActivity(_ userActivity: NSUserActivity, viewController: UIViewController? = nil) {
         
         guard let url = userActivity.webpageURL else { return }
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
@@ -91,43 +91,58 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            let previewUrl = queryItems.value(for: "previewUrl"),
            let artworkUrl100 = queryItems.value(for: "artworkUrl100") {
             let musicItem = setupMusicItem(artistName: artist, previewUrl: previewUrl, artworkUrl100: artworkUrl100)
-            if let viewController = viewController as? MusicDetailViewController {
-                
-                // Attempt to verify their location
-                guard let payload = userActivity.appClipActivationPayload,
-                      let lat = queryItems.value(for: "latitude"),
-                      let lon = queryItems.value(for: "longitude"),
-                      let latitude = Double(lat), let longitude = Double(lon) else {
-                    return
-                }
-
-                let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 100, identifier: "location")
-
-                payload.confirmAcquired(in: region) { inRegion, error in
-                    if let error = error as? APActivationPayloadError {
-                        if error.code == APActivationPayloadError.disallowed {
-                            print("---Not launched via QR code")
-                            // We are using the example URL in the Run of the MusicNetworkClip scheme
-                            // so we set the music item here; however for a real app we have to remove
-                            // the following line.
-                            DispatchQueue.main.async {
-                                viewController.musicItem = musicItem
-                                viewController.setupMedia()
-                            }
-                        } else if error.code == APActivationPayloadError.doesNotMatch {
-                            print("---Region does not match location")
-                        } else {
-                            print("---\(error.localizedDescription)")
-                        }
-                    } else {
-                        // location confirmed – set music item
-                        DispatchQueue.main.async {
-                            viewController.musicItem = musicItem
-                            viewController.setupMedia()
-                        }
-                    }
-                }
+            
+            // Attempt to verify location from the URL payload
+            guard let payload = userActivity.appClipActivationPayload,
+                  let lat = queryItems.value(for: "latitude"),
+                  let lon = queryItems.value(for: "longitude"),
+                  let latitude = Double(lat), let longitude = Double(lon) else {
+                return
             }
+            
+            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 100, identifier: "location")
+            
+            payload.confirmAcquired(in: region) { inRegion, error in
+                
+                self.handleLocationConfirmationResult(inRegion: inRegion, error: error, viewController: viewController, musicItem: musicItem)
+            }
+        }
+    }
+    
+    private func handleLocationConfirmationResult(inRegion: Bool, error: Error?, viewController: UIViewController?, musicItem: MusicItem) {
+        
+        if let viewController = viewController as? MusicDetailViewController {
+        
+            if let error = error as? APActivationPayloadError {
+                handleLocationError(error: error)
+            } else {
+                handleLocationSuccess(inRegion: inRegion, viewController: viewController, musicItem: musicItem)
+            }
+        }
+    }
+    
+    private func handleLocationError(error: APActivationPayloadError) {
+        
+        if error.code == APActivationPayloadError.disallowed {
+            print("---Not launched via QR code")
+        } else if error.code == APActivationPayloadError.doesNotMatch {
+            print("---Region does not match location")
+        } else {
+            print("---\(error.localizedDescription)")
+        }
+
+    }
+    
+    private func handleLocationSuccess(inRegion: Bool, viewController: MusicDetailViewController, musicItem: MusicItem) {
+        
+        if inRegion {
+            // location confirmed – set music item
+            DispatchQueue.main.async {
+                viewController.musicItem = musicItem
+                viewController.setupMedia()
+            }
+        } else {
+            print("---Not in Region")
         }
     }
     
