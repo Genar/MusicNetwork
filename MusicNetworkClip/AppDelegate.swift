@@ -33,7 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// Use in case Application for lifecycle events
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         
-        true
+//        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+//            // handleUserActivity
+//        }
+        
+        return true
         
     }
 }

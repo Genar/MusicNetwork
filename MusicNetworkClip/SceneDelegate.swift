@@ -76,6 +76,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             var artistIndex = Int(artistIdx) ?? 0
             if artistIndex > 1 { artistIndex = 0 }
             let musicItem = getHardCodeMusicItem()[artistIndex]
+            if let viewController = viewController as? MusicDetailViewController {
+                showDetailViewController(viewController: viewController, musicItem: musicItem)
+            }
+        }
+    }
+    
+    func handleUserActivityWithLocationControl(_ userActivity: NSUserActivity, viewController: UIViewController? = nil) {
+
+        guard let url = userActivity.webpageURL else { return }
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
+        guard let queryItems = components.queryItems else { return }
+        if let artistIdx = queryItems.value(for: "artistindex") {
+            var artistIndex = Int(artistIdx) ?? 0
+            if artistIndex > 1 { artistIndex = 0 }
+            let musicItem = getHardCodeMusicItem()[artistIndex]
             // Attempt to verify location from the URL payload
             guard let payload = userActivity.appClipActivationPayload,
                   let lat = queryItems.value(for: "latitude"),
@@ -90,6 +105,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                 self.handleLocationConfirmationResult(inRegion: inRegion, error: error, viewController: viewController, musicItem: musicItem)
             }
+            
+            self.handleLocationConfirmationResult(inRegion: true, error: nil, viewController: viewController, musicItem: musicItem)
         }
     }
     
@@ -116,25 +133,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             print("---\(error.localizedDescription)")
         }
-
     }
     
     private func handleLocationSuccess(inRegion: Bool, viewController: MusicDetailViewController, musicItem: MusicItem) {
         
         if inRegion {
-            // location confirmed – set music item
-            DispatchQueue.main.async {
-                viewController.musicItem = musicItem
-                viewController.setupMedia()
-            }
+            showDetailViewController(viewController: viewController, musicItem: musicItem)
         } else {
             print("---Not in Region")
         }
     }
     
+    private func showDetailViewController(viewController: MusicDetailViewController, musicItem: MusicItem) {
+        
+        DispatchQueue.main.async {
+            viewController.musicItem = musicItem
+            viewController.setupMedia()
+        }
+    }
+    
     private func getHardCodeMusicItem() -> [MusicItem] {
         
-        let firstArtist = "artist=Toto, Steve Lukather, David Paic and Steve%20Porcaro"
+        let firstArtist = "artist=Toto, Steve Lukather, David Paic and Steve Porcaro"
         let firstTrackName = "Hold the line"
         let firstCollectionName = "Poland live"
         let firstReleaseDate = "2010"
