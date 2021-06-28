@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let detailViewController = storyboard.instantiateViewController(withIdentifier: "MusicDetailViewController")
         
         if let userActivity = options.userActivities.filter({ $0.activityType == NSUserActivityTypeBrowsingWeb }).first {
-            handleUserActivity(userActivity, viewController: detailViewController)
+            handleUserActivityWithLocationControl(userActivity, viewController: detailViewController)
         }
         
         window?.rootViewController = detailViewController
@@ -105,8 +105,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                 self.handleLocationConfirmationResult(inRegion: inRegion, error: error, viewController: viewController, musicItem: musicItem)
             }
-            
-            self.handleLocationConfirmationResult(inRegion: true, error: nil, viewController: viewController, musicItem: musicItem)
         }
     }
     
