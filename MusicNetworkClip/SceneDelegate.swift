@@ -164,7 +164,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func getHardCodeMusicItem() -> [MusicItem] {
         
-        let firstArtist = "artist=Toto, Steve Lukather, David Paic and Steve Porcaro"
+        let firstArtist = "Toto, Steve Lukather, David Paic and Steve Porcaro"
         let firstTrackName = "Hold the line"
         let firstCollectionName = "Poland live"
         let firstReleaseDate = "2010"
