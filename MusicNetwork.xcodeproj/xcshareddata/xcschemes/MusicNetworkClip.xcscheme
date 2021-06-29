@@ -58,7 +58,7 @@
          </EnvironmentVariable>
       </EnvironmentVariables>
       <LocationScenarioReference
-         identifier = "../MusicNetworkClip/Sallent.gpx"
+         identifier = "../../MusicNetworkClip/Sallent.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

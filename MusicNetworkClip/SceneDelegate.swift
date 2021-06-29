@@ -14,6 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    var detailViewController: UIViewController?
+    
+    var usrActivity: NSUserActivity?
+    
     ///
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options: UIScene.ConnectionOptions) {
         
@@ -21,9 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let detailViewController = storyboard.instantiateViewController(withIdentifier: "MusicDetailViewController")
+        self.detailViewController = storyboard.instantiateViewController(withIdentifier: "MusicDetailViewController")
         
         if let userActivity = options.userActivities.filter({ $0.activityType == NSUserActivityTypeBrowsingWeb }).first {
+            self.userActivity = userActivity
             handleUserActivityWithLocationControl(userActivity, viewController: detailViewController)
         }
         
@@ -62,8 +67,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// If the app or App Clip is suspended in memory and the user launches it, the system calls the following method
     func scene(_ scene: UIScene, willContinueUserActivityWithType userActivityType: String) {
         
-        if let userActivity = userActivity {
-            handleUserActivity(userActivity)
+    }
+    
+    /// If the app or App Clip is suspended in memory and the user launches it, the system calls the following method
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+
+        print("[Scene] Application continue user activity...")
+
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            handleUserActivityWithLocationControl(userActivity)
         }
     }
     
