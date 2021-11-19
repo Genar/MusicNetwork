@@ -53,7 +53,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCAppClipURL"
-            value = "https://musicnetwork-evmobile.web.app/clips?artistindex=1&amp;latitude=41.8271&amp;longitude=1.8922"
+            value = "https://musicnetwork-mobile.web.app/clips?artistindex=1&amp;latitude=41.8271&amp;longitude=1.8922"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

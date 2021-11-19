@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let userActivity = options.userActivities.filter({ $0.activityType == NSUserActivityTypeBrowsingWeb }).first {
             self.userActivity = userActivity
             handleUserActivityWithLocationControl(userActivity, viewController: detailViewController)
+            // handleUserActivity(userActivity, viewController: detailViewController)
         }
         
         window?.rootViewController = detailViewController
